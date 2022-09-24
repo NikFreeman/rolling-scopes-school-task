@@ -1,0 +1,38 @@
+.watch__content {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 106.496px;
+  line-height: 75%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding-left: 662px;
+  padding-top: 88px;
+  position: relative;
+}
+.watch__content-mark {
+  color: rgba(255, 238, 46, 1);
+}
+.watch__elipse {
+  background: linear-gradient(113.96deg, #f9804b 1.49%, #fe9013 101.44%);
+  border-radius: 50%;
+  position: absolute;
+  z-index: 0;
+  height: 465px;
+  width: 465px;
+  margin-top: 12px;
+  margin-left: 587px;
+}
+.watch {
+  background: rgba(40, 48, 53, 1);
+  background-image: url("./../../images/Giant\ Panda.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.watch__btn {
+  margin-left: 763px;
+  margin-top: 60px;
+  margin-bottom: 100px;
+}
