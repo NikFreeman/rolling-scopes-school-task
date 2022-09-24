@@ -16,7 +16,23 @@
   text-align: center;
   text-transform: uppercase;
   color: #ffffff;
+  transition: color 0.3s ease;
+  cursor: pointer;
 }
 .btn:hover {
+  background: rgba(228, 114, 9, 1);
+}
+.arroy__elipse {
+  transition: color 0.3s ease;
+  cursor: pointer;
+  height: 62px;
+  width: 62px;
+  border-radius: 50%;
+  background: linear-gradient(113.96deg, #f9804b 1.49%, #fe9013 101.44%);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.arroy__elipse:hover {
   background: rgba(228, 114, 9, 1);
 }

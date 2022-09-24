@@ -1,0 +1,74 @@
+.sliders {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  position: relative;
+  row-gap: 20px;
+  column-gap: 29px;
+}
+.elipse__left {
+  position: absolute;
+  left: 138px;
+  top: 580px;
+}
+.elipse__rigth {
+  position: absolute;
+  right: 140px;
+  top: 580px;
+}
+.pets {
+  padding-top: 176px;
+  position: relative;
+}
+.card__slider {
+  box-sizing: border-box;
+
+  width: 367px;
+  height: 426px;
+  border: 1px #f9804b solid;
+  border-radius: 5px;
+}
+.card__row {
+  display: flex;
+  padding-left: 16px;
+  padding-right: 10px;
+  padding-top: 2px;
+  display: flex;
+  justify-content: space-between;
+}
+.card-content-title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #000000;
+}
+.pets__btn {
+  display: flex;
+  margin-top: 80px;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+.card__content-subtitle {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 120%;
+  color: #000000;
+}
+.card__food {
+  padding-top: 1px;
+  padding-right: 1px;
+}
+.decor__left {
+  position: absolute;
+  bottom: -105px;
+  left: 0px;
+}
+.decor__right {
+  position: absolute;
+  bottom: -105px;
+  right: 0px;
+}
