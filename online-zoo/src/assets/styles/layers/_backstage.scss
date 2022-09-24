@@ -1,0 +1,50 @@
+.flower__zoo {
+  position: absolute;
+  top: -127px;
+  right: 0px;
+  backdrop-filter: blur(2px);
+}
+.backstage__row {
+  display: flex;
+  gap: 87px;
+  margin-top: 140px;
+}
+.backstage {
+  position: relative;
+}
+
+.backstage__title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 120%;
+  color: #333b41;
+}
+.backstage__subtitle {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 120%;
+  color: #333b41;
+  padding-top: 56px;
+}
+.backstage__paragraph1 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: #333b41;
+  padding-top: 22px;
+}
+.backstage__paragraph2 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #333b41;
+  padding-top: 32px;
+}
