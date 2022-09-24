@@ -27,7 +27,7 @@ const cssLoaders = (extra) => {
 
 module.exports = {
   mode: "development",
-  entry: "/src/js/",
+  entry: "./online-zoo/src/pages/main/",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: filename("js"),
@@ -35,7 +35,7 @@ module.exports = {
   },
   plugins: [
     new HTMLWebpackPlugin({
-      template: "./src/index.html",
+      template: "./online-zoo/src/pages/main/index.html",
     }),
     new MiniCssExtractPlugin({
       filename: filename("css"),
@@ -45,6 +45,10 @@ module.exports = {
     rules: [
       {
         test: /\.(png|jpg|svg|gif)$/,
+        type: "asset/resource",
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: "asset/resource",
       },
       {

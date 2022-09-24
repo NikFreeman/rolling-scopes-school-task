@@ -5,9 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PetStory</title>
-    <link rel="stylesheet" href="../../assets/styles/main/style.css" />
   </head>
   <body>
-    <section class="header">PetStory</section>
+    <header class="header">
+      <div class="wrapper">
+        <div class="header__wrapper">
+          <div class="header__logo logo">
+            <a href="#" class="header__logo-link">
+              <h1 class="header__logo-title">PetStory online</h1>
+              <img
+                class="header__logo-image"
+                src="<%=require('./../../assets/images/bamboo.svg') %>"
+                alt="bamboo" />
+            </a>
+          </div>
+          <nav class="header__nav">
+            <ul class="header__list">
+              <li class="header__item">
+                <a href="" class="header__link active-link">About</a>
+              </li>
+              <li class="header__item">
+                <a href="" class="header__link">Map</a>
+              </li>
+              <li class="header__item">
+                <a href="" class="header__link">Zoos</a>
+              </li>
+              <li class="header__item">
+                <a href="" class="header__link">Donate</a>
+              </li>
+              <li class="header__item">
+                <a href="" class="header__link">Contact us</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="header__design">
+            <a class="header__design-link" href="http://figma.com"
+              >Designed by ©</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="watch">
+        <div class="watch__elipse"></div>
+        <p class="watch__content">Watch your favorite animal online</p>
+        <div class="watch__btn btn">
+          <button>wath online</button>
+        </div>
+      </section>
+    </main>
+    <footer class="footer"></footer>
   </body>
 </html>
