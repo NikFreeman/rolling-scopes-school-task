@@ -1,0 +1,138 @@
+.pick {
+  background: linear-gradient(
+      315.75deg,
+      rgba(254, 210, 144, 0.7) 30.06%,
+      #febdab 100.95%,
+      rgba(254, 210, 144, 0.7) 106.36%
+    ),
+    linear-gradient(
+      315.75deg,
+      rgba(254, 189, 171, 0.74) 30.06%,
+      rgba(243, 169, 248, 0.66) 50.74%,
+      #e0d8f0 80.49%,
+      #eaf7fe 127.9%,
+      #eaf7fe 149.54%
+    ),
+    linear-gradient(
+      315.75deg,
+      rgba(254, 189, 171, 0.74) 30.06%,
+      rgba(243, 169, 248, 0.66) 50.74%,
+      #e0d8f0 80.49%,
+      #eaf7fe 127.9%,
+      #eaf7fe 149.54%
+    );
+  opacity: 0.9;
+  padding-top: 69px;
+  padding-bottom: 100px;
+}
+.pick__rectange {
+  background: rgba(253, 253, 255, 0.52);
+  backdrop-filter: blur(2px);
+  border-radius: 20px;
+  padding-bottom: 60px;
+}
+.pick__row {
+  display: flex;
+}
+.pick__card {
+  width: 168px;
+  height: 244px;
+  border-radius: 5px;
+}
+.pick__title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 120%;
+  /* identical to box height, or 58px */
+  text-align: center;
+  color: #fe9013;
+  padding-top: 41px;
+  padding-left: 3px;
+}
+.pick__subtitle-big {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 120%;
+  /* identical to box height, or 29px */
+  color: #333b41;
+  padding-top: 32px;
+}
+.pick__content {
+  margin-left: 100px;
+}
+.pick__subtitle-mark {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+  /* identical to box height, or 21px */
+  color: #333b41;
+  padding-top: 40px;
+}
+.pick__subtitle {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: #333b41;
+  padding-top: 10px;
+  padding-right: 198px;
+}
+.pick__subtitle-underground {
+  border-bottom: 1px solid rgba(254, 144, 19, 1);
+  padding-bottom: 2px;
+}
+.pick-how-it-work__title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 130%;
+  /* identical to box height, or 47px */
+  color: #333b41;
+  text-align: center;
+  padding-top: 61px;
+}
+.pick__btn {
+  display: flex;
+  margin-top: 60px;
+  justify-content: center;
+}
+.pick__row {
+  padding-top: 40px;
+  padding-left: 198px;
+  padding-right: 198px;
+}
+.pick__card-rectangle {
+  width: 167px;
+  height: 165px;
+  background: #ffffff;
+  border-radius: 5px;
+  border: 1px solid #f9804b;
+  display: flex;
+}
+.pick__card + .pick__arrow {
+  margin-right: 29px;
+  margin-left: 30px;
+}
+.pick__arrow {
+  padding-top: 61px;
+}
+.pick__card-rectangle-image {
+  margin: auto;
+}
+.pick__card-title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #333b41;
+  padding-top: 30px;
+}
