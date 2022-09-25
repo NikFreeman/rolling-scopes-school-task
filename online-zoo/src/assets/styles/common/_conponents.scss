@@ -37,3 +37,21 @@
 .arrow__elipse:hover {
   background: rgba(228, 114, 9, 1);
 }
+.rectangular-btn {
+  width: 298px;
+  height: 54px;
+  background: linear-gradient(113.96deg, #f9804b 1.49%, #fe9013 101.44%);
+  border-radius: 5px;
+  border: none;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.rectangular-btn:hover {
+  background: rgba(228, 114, 9, 1);
+}
