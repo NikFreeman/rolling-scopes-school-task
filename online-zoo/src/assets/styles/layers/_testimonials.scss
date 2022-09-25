@@ -1,3 +1,6 @@
+.testimonials {
+  position: relative;
+}
 .testimonials__title {
   font-family: "Roboto";
   font-style: normal;
@@ -125,4 +128,13 @@
 }
 .testimonials__btn {
   margin-top: 31px;
+  padding-bottom: 200px;
+}
+.testimonials__decor {
+  position: absolute;
+  width: 245.92px;
+  height: 295.45px;
+  right: 0px;
+  bottom: 0px;
+  background: url(./../../images/leav_foto.png);
 }
