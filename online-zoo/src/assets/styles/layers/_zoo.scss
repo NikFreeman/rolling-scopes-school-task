@@ -1,0 +1,276 @@
+.zoo {
+  background: linear-gradient(
+      315.75deg,
+      rgba(254, 210, 144, 0.7) 30.06%,
+      #febdab 100.95%,
+      rgba(254, 210, 144, 0.7) 106.36%
+    ),
+    linear-gradient(
+      315.75deg,
+      rgba(254, 189, 171, 0.74) 30.06%,
+      rgba(243, 169, 248, 0.66) 50.74%,
+      #e0d8f0 80.49%,
+      #eaf7fe 127.9%,
+      #eaf7fe 149.54%
+    ),
+    linear-gradient(
+      315.75deg,
+      rgba(254, 189, 171, 0.74) 30.06%,
+      rgba(243, 169, 248, 0.66) 50.74%,
+      #e0d8f0 80.49%,
+      #eaf7fe 127.9%,
+      #eaf7fe 149.54%
+    );
+  padding-bottom: 200px;
+}
+.zoo__title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 130%;
+  /* identical to box height, or 47px */
+  color: #ffffff;
+  padding-top: 40px;
+}
+.zoo__content {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  color: #ffffff;
+  padding-top: 10px;
+}
+.zoo__subtitle {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 130%;
+  color: #fe9013;
+  padding-top: 46px;
+  padding-bottom: 59px;
+}
+.zoo__rectangle {
+  background: rgba(255, 255, 255, 0.52);
+  backdrop-filter: blur(2px);
+  border-radius: 20px;
+}
+.zoo__rectangle-title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 120%;
+  color: #fe9013;
+  padding-top: 39px;
+  padding-left: 342px;
+}
+.zoo__rectangle-content {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 120%;
+  color: #333b41;
+  padding-top: 22px;
+  padding-left: 93px;
+}
+.animals__widget {
+  display: flex;
+}
+.animals__diet {
+  margin-top: 58px;
+  margin-left: 308px;
+}
+.animals__diet-day {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 72px;
+  line-height: 80%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #000000;
+  margin-top: 107px;
+}
+.animals__diet-content {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  /* or 22px */
+  text-align: center;
+  color: #333b41;
+  margin-top: 10px;
+}
+.animals__diet-symbol {
+  margin-top: 189px;
+  margin-left: 12px;
+}
+.animals__diet-animal {
+  margin-top: 60px;
+  margin-left: 63px;
+}
+.zoo__amount {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #000000;
+  margin-top: 43px;
+  margin-left: 96px;
+}
+.box {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 140%;
+  text-transform: uppercase;
+}
+.zoo__progress-bar {
+  padding-top: 50px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: 79px;
+  margin-right: 92px;
+}
+
+.zoo-fieldset {
+  display: flex;
+  border: none;
+  justify-content: space-between;
+  text-align: center;
+  position: relative;
+}
+.zoo__amount-radio {
+  display: none;
+  position: relative;
+}
+.box {
+  cursor: pointer;
+  user-select: none;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #333b41;
+}
+.box::before {
+  transition: all 250ms cubic-bezier(0.4, 0.25, 0.3, 1);
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ffee2e;
+  border: 0px solid #ffee2e;
+  font-size: 0;
+  position: absolute;
+  transform: translate(18px, -30px);
+}
+
+.box::after {
+  transition: all 250ms cubic-bezier(0.4, 0.25, 0.3, 1);
+  content: "";
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: #ffee2e;
+  position: absolute;
+  transform: translate(18px, -30px);
+}
+.zoo__amount-radio:checked + label {
+  color: #fe9013;
+}
+.zoo__amount-radio:checked + .box::before {
+  background-color: transparent;
+  width: 15px;
+  height: 15px;
+  border-width: 2px;
+  transform: translate(18px, -35px);
+}
+
+.zoo__amount-radio:checked + .box::after {
+  width: 10px;
+  height: 10px;
+  transform: translate(-23px, -30px);
+}
+.zoo-box {
+  position: absolute;
+  width: 976px;
+  height: 27px;
+  background: #404950;
+  border-radius: 2px;
+  top: -32px;
+}
+.zoo-box2 {
+  position: absolute;
+  width: 915px;
+  height: 2px;
+  top: -20px;
+  left: 33px;
+  background: #72828e;
+}
+
+.zoo__amount-number {
+  width: 262px;
+  height: 50px;
+  border: 1px solid rgba(146, 150, 153, 1);
+  margin-left: auto;
+  margin-top: 40px;
+  margin-right: auto;
+}
+.zoo__amount-number:focus {
+  appearance: none;
+  border: none;
+}
+.zoo__amount-number::placeholder {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #929699;
+}
+.zoo__amount-row {
+  display: flex;
+}
+.period {
+  user-select: none;
+}
+.zoo-period {
+  margin-top: 27px;
+  display: flex;
+}
+.zoo__monthly {
+  margin-left: 200;
+}
+.zoo__period-items {
+  margin-left: auto;
+  margin-right: auto;
+}
+.zoo__monthly {
+  margin-left: 6px;
+  margin-right: 48px;
+}
+.zoo__once {
+  padding-left: 8px;
+  padding-right: 12px;
+}
+.zoo__btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 31px;
+  margin-left: 7px;
+}
+.zoo__network {
+  display: flex;
+  justify-content: center;
+  margin-top: 31px;
+  margin-left: 7px;
+  padding-bottom: 62px;
+}
+.zoo__network-item {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #333b41;
+}

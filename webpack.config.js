@@ -27,15 +27,23 @@ const cssLoaders = (extra) => {
 
 module.exports = {
   mode: "development",
-  entry: "./online-zoo/src/pages/main/",
+  entry: {
+    main: "./online-zoo/src/pages/main/index.js",
+    donate: "./online-zoo/src/pages/donate/index.js",
+  },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: filename("js"),
+    filename: "[name].js",
     assetModuleFilename: "images/[name][ext]",
   },
   plugins: [
     new HTMLWebpackPlugin({
       template: "./online-zoo/src/pages/main/index.html",
+      filename: "index.html",
+    }),
+    new HTMLWebpackPlugin({
+      template: "./online-zoo/src/pages/donate/index.html",
+      filename: "donate.html",
     }),
     new MiniCssExtractPlugin({
       filename: filename("css"),

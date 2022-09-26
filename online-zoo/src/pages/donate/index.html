@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>donate</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="wrapper">
+        <div class="header__wrapper">
+          <div class="header__logo logo">
+            <a href="index.html" class="header__logo-link">
+              <h1 class="header__logo-title">PetStory online</h1>
+              <img
+                class="header__logo-image"
+                src="<%=require('./../../assets/images/bamboo.svg') %>"
+                alt="bamboo" />
+            </a>
+          </div>
+          <nav class="header__nav">
+            <ul class="header__list">
+              <li class="header__item">
+                <a href="index.html" class="header__link">About</a>
+              </li>
+              <li class="header__item">
+                <a href="" class="header__link">Map</a>
+              </li>
+              <li class="header__item">
+                <a href="" class="header__link">Zoos</a>
+              </li>
+              <li class="header__item">
+                <a href="" class="header__link active-link">Donate</a>
+              </li>
+              <li class="header__item">
+                <a href="" class="header__link">Contact us</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="header__design">
+            <a class="header__design-link" href="http://figma.com"
+              >Designed by ©</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="donate__header-bg">
+        <div class="wraper"></div>
+      </section>
+      <section class="zoo">
+        <div class="wrapper">
+          <h3 class="zoo__title">
+            THE ZOO HAS OFFICIALLY REOPENED BUT WE STILL NEED YOUR HELP!
+          </h3>
+          <p class="zoo__content">
+            Even though the Zoo has been able to reopen, we are at a greatly
+            reduced capacity with educational programs and public and private
+            events cancelled or postponed for additional months. We need you now
+            more than ever to help ensure that we overcome these challenges. We
+            have been actively raising funds in the community, and we are
+            grateful for the generosity. But much more support is still needed,
+            and we need your help! Please consider a gift today – no matter what
+            size – to help us sustain our mission.
+          </p>
+          <h3 class="zoo__subtitle">Donation Information</h3>
+
+          <div class="zoo__rectangle">
+            <h2 class="zoo__rectangle-title">Pick and feed a friend</h2>
+            <p class="zoo__rectangle-content">
+              We know the animals bring you joy, and in these extraordinary
+              times, we’re glad.
+            </p>
+
+            <div class="animals__widget">
+              <div class="animals__diet">
+                <p class="animals__diet-day">4</p>
+                <p class="animals__diet-content">Panda diet for the day.</p>
+              </div>
+              <div class="animals__diet-symbol">
+                <img
+                  class="animals__diet-x"
+                  src="<%=require('./../../assets/images/x_icon.svg') %>"
+                  alt="x" />
+              </div>
+              <div class="animals__diet-animal">
+                <img
+                  class="animals__diet-image"
+                  src="<%=require('./../../assets/images/panda_widget1.svg') %>"
+                  alt="x" />
+              </div>
+            </div>
+            <div class="zoo__amount">Amount</div>
+            <div class="zoo__progress-bar">
+              <fieldset class="zoo-fieldset">
+                <div class="zoo-box"></div>
+                <div class="zoo-box2"></div>
+                <input
+                  class="zoo__amount-radio"
+                  type="radio"
+                  name="zoo_bar"
+                  id="5000"
+                  value="5000" />
+                <label class="box" for="5000">$5000</label>
+                <input
+                  class="zoo__amount-radio"
+                  type="radio"
+                  name="zoo_bar"
+                  id="2000"
+                  value="2000"
+                  checked="checked" />
+                <label class="box" for="2000">$2000</label>
+                <input
+                  class="zoo__amount-radio"
+                  type="radio"
+                  name="zoo_bar"
+                  id="500"
+                  value="500" />
+                <label class="box" for="500">&nbsp;$500</label>
+                <input
+                  class="zoo__amount-radio"
+                  type="radio"
+                  name="zoo_bar"
+                  id="250"
+                  value="250" />
+                <label class="box" for="250">&nbsp;$250</label>
+                <input
+                  class="zoo__amount-radio"
+                  type="radio"
+                  name="zoo_bar"
+                  id="100"
+                  value="100" />
+                <label class="box" for="100">&nbsp;$100</label>
+                <input
+                  class="zoo__amount-radio"
+                  type="radio"
+                  name="zoo_bar"
+                  id="50"
+                  value="50" />
+                <label class="box" for="50">&nbsp;$50&nbsp;</label>
+                <input
+                  class="zoo__amount-radio"
+                  type="radio"
+                  name="zoo_bar"
+                  id="25"
+                  value="25" />
+                <label class="box" for="25">&nbsp;$25&nbsp;</label>
+              </fieldset>
+            </div>
+            <div class="zoo__amount-row">
+              <input
+                type="number"
+                class="zoo__amount-number"
+                name=""
+                placeholder="Another amount"
+                id="" />
+            </div>
+            <div class="zoo-period">
+              <div class="zoo__period-items">
+                <input type="radio" name="amount" id="Monthly" />
+                <label class="zoo__monthly period" for="Monthly">Monthly</label>
+                <input type="radio" name="amount" id="Once" />
+                <label class="zoo__once period" for="Once">Once</label>
+              </div>
+            </div>
+            <div class="zoo__btn">
+              <button class="btn">Feed a friend now</button>
+            </div>
+            <div class="zoo__network">
+              <p class="zoo__network-item">
+                Share with your friends on social networks
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="wrapper">
+        <div class="footer__row">
+          <div class="footer__logo logo">
+            <a href="index.html" class="footer__logo-link">
+              <p class="footer__logo-title">PetStory online</p>
+              <img
+                class="footer__logo-image"
+                src="<%=require('./../../assets/images/bamboo-footer.svg') %>"
+                alt="bamboo" />
+            </a>
+          </div>
+          <main></main>
+          <div class="footer__subscribe">
+            <div class="footer__subtitle">
+              <p>Subscribe to our news</p>
+              <div>
+                <form class="footer__email" action="">
+                  <input
+                    type="email"
+                    class="footer__email-input"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                    id="" />
+
+                  <button type="submit" class="footer__btn-submit">
+                    Submit
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer__btn">
+          <button class="rectangular-btn">donate for volunteers</button>
+        </div>
+        <div class="footer__footer">
+          <div class="social__networks">
+            <div class="social__networks-item">
+              <a href="https://facebook.com" class="social__networks-link">
+                <div class="network-link">
+                  <div class="social__network-elipse">
+                    <img
+                      class="social__networks-image"
+                      src="<%=require('./../../assets/images/Facebook.svg') %>"
+                      alt="Facebook" />
+                  </div>
+                  <p class="network-title">Facebook</p>
+                </div>
+              </a>
+            </div>
+            <div class="social__networks-item">
+              <a href="https://twitter.com" class="social__networks-link">
+                <div class="network-link">
+                  <div class="social__network-elipse">
+                    <img
+                      class="social__networks-image"
+                      src="<%=require('./../../assets/images/twitter.svg') %>"
+                      alt="Twitter" />
+                  </div>
+                  <p class="network-title">Twitter</p>
+                </div>
+              </a>
+            </div>
+            <div class="social__networks-item">
+              <a href="https://instagram.com" class="social__networks-link">
+                <div class="network-link">
+                  <div class="social__network-elipse">
+                    <img
+                      class="social__networks-image"
+                      src="<%=require('./../../assets/images/instagram.svg') %>"
+                      alt="Instagram" />
+                  </div>
+                  <p class="network-title">Instagram</p>
+                </div>
+              </a>
+            </div>
+            <div class="social__networks-item">
+              <a href="https://youtube.com" class="social__networks-link">
+                <div class="network-link">
+                  <div class="social__network-elipse">
+                    <img
+                      class="social__networks-image"
+                      src="<%=require('./../../assets/images/Youtube.svg') %>"
+                      alt="Youtube" />
+                  </div>
+                  <p class="network-title">Yuotube</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <nav class="footer__nav">
+            <ul class="header__list">
+              <li class="header__item">
+                <a href="index.html" class="header__link">About</a>
+              </li>
+              <li class="header__item">
+                <a href="" class="header__link">Map</a>
+              </li>
+              <li class="header__item">
+                <a href="" class="header__link">Zoos</a>
+              </li>
+              <li class="header__item">
+                <a href="" class="header__link">Contact us</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="footer__design">
+            <p class="footer__design-item">Designed by Alisa Samborskaya</p>
+            <p class="footer__design-item">©RSSchool & ©Yem Digital 2021</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
