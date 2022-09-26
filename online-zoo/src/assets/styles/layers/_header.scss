@@ -11,6 +11,7 @@
 }
 .header__list {
   display: flex;
+  list-style-type: none;
 }
 
 .header__logo-title {
@@ -23,12 +24,7 @@
   color: #ffffff;
   margin-top: 3.5px;
 }
-.logo {
-  border: 1px solid white;
-  border-radius: 2px;
-  height: 50px;
-  width: 80px;
-}
+
 .header__logo-image {
   position: relative;
   top: -26px;
