@@ -7,12 +7,12 @@
 }
 .elipse__left {
   position: absolute;
-  left: 138px;
+  left: 8.75%;
   top: 580px;
 }
 .elipse__rigth {
   position: absolute;
-  right: 140px;
+  right: 8.75%;
   top: 580px;
 }
 .pets {
@@ -25,13 +25,35 @@
   height: 426px;
   border: 1px #f9804b solid;
   border-radius: 5px;
+
+  overflow: hidden;
+}
+.card__slider-image {
+  transition: 0.3s;
+}
+.card__slider:hover {
+  background-color: #000000;
+}
+.card__slider:hover .card__slider-image {
+  transform: scale(1.35);
+  opacity: 60%;
+}
+.card__slider:hover .card__content {
+  color: white;
+  transform: translateY(-50px);
+}
+.card__content {
+  color: black;
+  transition: 0.5s;
+}
+.card__slider:hover .card__food {
+  display: none;
 }
 .card__row {
   display: flex;
   padding-left: 16px;
   padding-right: 10px;
   padding-top: 2px;
-  display: flex;
   justify-content: space-between;
 }
 .card-content-title {
@@ -41,7 +63,6 @@
   font-size: 16px;
   line-height: 140%;
   text-transform: uppercase;
-  color: #000000;
 }
 .pets__btn {
   display: flex;
@@ -55,7 +76,6 @@
   font-weight: 300;
   font-size: 15px;
   line-height: 120%;
-  color: #000000;
 }
 .card__food {
   padding-top: 1px;

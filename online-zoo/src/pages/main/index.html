@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PetStory</title>
+    <title>Online Zoo</title>
   </head>
   <body>
     <header class="header">
@@ -12,7 +12,10 @@
         <div class="header__wrapper">
           <div class="header__logo logo">
             <a href="#" class="header__logo-link">
-              <h1 class="header__logo-title">PetStory online</h1>
+              <h1 class="header__logo-title">
+                PetStory <br />
+                online
+              </h1>
               <img
                 class="header__logo-image"
                 src="<%=require('./../../assets/images/bamboo.svg') %>"
@@ -39,7 +42,10 @@
             </ul>
           </nav>
           <div class="header__design">
-            <a class="header__design-link" href="http://figma.com"
+            <a
+              class="header__design-link"
+              target="_blank "
+              href="http://figma.com"
               >Designed by ©</a
             >
           </div>
@@ -330,9 +336,12 @@
                     alt="account" />
                 </div>
                 <div class="testimonials__card-content">
-                  <div class="testimonials__card-title">Michael John</div>
+                  <p class="testimonials__card-title">Michael John</p>
                   <div class="testimonials__card-subtitle">
-                    Local Austria • Today
+                    <p class="testimonial-location">
+                      Local Austria •
+                      <span class="testimonial-time">Today</span>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -361,9 +370,12 @@
                     alt="account" />
                 </div>
                 <div class="testimonials__card-content">
-                  <div class="testimonials__card-title">Oskar Samborsky</div>
+                  <p class="testimonials__card-title">Oskar Samborsky</p>
                   <div class="testimonials__card-subtitle">
-                    Local Austria • Yesterday
+                    <p class="testimonial-location">
+                      Local Austria •
+                      <span class="testimonial-time">Yesterday</span>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -397,11 +409,12 @@
                     alt="account" />
                 </div>
                 <div class="testimonials__card-content">
-                  <div class="testimonials__card-title">
-                    Fredericka Michelin
-                  </div>
+                  <p class="testimonials__card-title">Fredericka Michelin</p>
                   <div class="testimonials__card-subtitle">
-                    Local Austria • Yesterday
+                    <p class="testimonial-location">
+                      Local Austria •
+                      <span class="testimonial-time">Yesterday</span>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -435,9 +448,12 @@
                     alt="account" />
                 </div>
                 <div class="testimonials__card-content">
-                  <div class="testimonials__card-title">Mila Riksha</div>
+                  <p class="testimonials__card-title">Mila Riksha</p>
                   <div class="testimonials__card-subtitle">
-                    Local Austria • Yesterday
+                    <p class="testimonial-location">
+                      Local Austria •
+                      <span class="testimonial-time">Yesterday</span>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -466,6 +482,10 @@
             <input
               class="testimonials__input-range"
               type="range"
+              min="0"
+              max="80"
+              value="0"
+              step="20"
               name="testimonials"
               id="" />
           </div>
@@ -518,7 +538,10 @@
         <div class="footer__footer">
           <div class="social__networks">
             <div class="social__networks-item">
-              <a href="https://facebook.com" class="social__networks-link">
+              <a
+                href="https://facebook.com"
+                class="social__networks-link"
+                target="_blank">
                 <div class="network-link">
                   <div class="social__network-elipse">
                     <img
@@ -531,7 +554,10 @@
               </a>
             </div>
             <div class="social__networks-item">
-              <a href="https://twitter.com" class="social__networks-link">
+              <a
+                href="https://twitter.com"
+                class="social__networks-link"
+                target="_blank">
                 <div class="network-link">
                   <div class="social__network-elipse">
                     <img
@@ -544,7 +570,10 @@
               </a>
             </div>
             <div class="social__networks-item">
-              <a href="https://instagram.com" class="social__networks-link">
+              <a
+                href="https://instagram.com"
+                class="social__networks-link"
+                target="_blank">
                 <div class="network-link">
                   <div class="social__network-elipse">
                     <img
@@ -557,7 +586,10 @@
               </a>
             </div>
             <div class="social__networks-item">
-              <a href="https://youtube.com" class="social__networks-link">
+              <a
+                href="https://youtube.com"
+                class="social__networks-link"
+                target="_blank">
                 <div class="network-link">
                   <div class="social__network-elipse">
                     <img

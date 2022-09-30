@@ -93,81 +93,148 @@
               </div>
             </div>
             <div class="zoo__amount">Amount</div>
-            <div class="zoo__progress-bar">
-              <fieldset class="zoo-fieldset">
-                <div class="zoo-box"></div>
-                <div class="zoo-box2"></div>
-                <input
-                  class="zoo__amount-radio"
-                  type="radio"
-                  name="zoo_bar"
-                  id="5000"
-                  value="5000" />
-                <label class="box" for="5000">$5000</label>
-                <input
-                  class="zoo__amount-radio"
-                  type="radio"
-                  name="zoo_bar"
-                  id="2000"
-                  value="2000"
-                  checked="checked" />
-                <label class="box" for="2000">$2000</label>
-                <input
-                  class="zoo__amount-radio"
-                  type="radio"
-                  name="zoo_bar"
-                  id="500"
-                  value="500" />
-                <label class="box" for="500">&nbsp;$500</label>
-                <input
-                  class="zoo__amount-radio"
-                  type="radio"
-                  name="zoo_bar"
-                  id="250"
-                  value="250" />
-                <label class="box" for="250">&nbsp;$250</label>
-                <input
-                  class="zoo__amount-radio"
-                  type="radio"
-                  name="zoo_bar"
-                  id="100"
-                  value="100" />
-                <label class="box" for="100">&nbsp;$100</label>
-                <input
-                  class="zoo__amount-radio"
-                  type="radio"
-                  name="zoo_bar"
-                  id="50"
-                  value="50" />
-                <label class="box" for="50">&nbsp;$50&nbsp;</label>
-                <input
-                  class="zoo__amount-radio"
-                  type="radio"
-                  name="zoo_bar"
-                  id="25"
-                  value="25" />
-                <label class="box" for="25">&nbsp;$25&nbsp;</label>
-              </fieldset>
-            </div>
-            <div class="zoo__amount-row">
-              <input
-                type="number"
-                class="zoo__amount-number"
-                name=""
-                placeholder="Another amount"
-                id="" />
-            </div>
-            <div class="zoo-period">
-              <div class="zoo__period-items">
-                <input type="radio" name="amount" id="Monthly" />
-                <label class="zoo__monthly period" for="Monthly">Monthly</label>
-                <input type="radio" name="amount" id="Once" />
-                <label class="zoo__once period" for="Once">Once</label>
+            <form action="">
+              <div class="zoo__progress-bar">
+                <fieldset class="zoo-fieldset">
+                  <div class="zoo-box"></div>
+                  <div class="zoo-box2"></div>
+                  <label class="box">
+                    <input
+                      class="zoo__amount-radio"
+                      type="radio"
+                      name="zoo_bar"
+                      id="5000"
+                      value="5000" />
+
+                    <span class="amount__item"></span>
+                    <p>
+                      <span class="amount__monetary-unit">$</span
+                      ><span>5000</span>
+                    </p>
+                  </label>
+                  <label class="box">
+                    <input
+                      class="zoo__amount-radio"
+                      type="radio"
+                      name="zoo_bar"
+                      id="2000"
+                      value="2000"
+                      checked
+                      required />
+
+                    <span class="amount__item"></span>
+                    <p>
+                      <span class="amount__monetary-unit a2000">$</span
+                      ><span>2000</span>
+                    </p>
+                  </label>
+                  <label class="box">
+                    <input
+                      class="zoo__amount-radio"
+                      type="radio"
+                      name="zoo_bar"
+                      id="1000"
+                      value="1000" />
+                    <span class="amount__item"></span>
+                    <p><span class="amount__monetary-unit">$</span>1000</p>
+                  </label>
+                  <label class="box">
+                    <input
+                      class="zoo__amount-radio"
+                      type="radio"
+                      name="zoo_bar"
+                      id="500"
+                      value="500" />
+                    <span class="amount__item"></span>
+                    <p>
+                      <span class="amount__monetary-unit">$</span>500
+                    </p></label
+                  >
+                  <label class="box">
+                    <input
+                      class="zoo__amount-radio"
+                      type="radio"
+                      name="zoo_bar"
+                      id="250"
+                      value="250" />
+                    <span class="amount__item"></span>
+                    <p>
+                      <span class="amount__monetary-unit">$</span>250
+                    </p></label
+                  >
+                  <label class="box">
+                    <input
+                      class="zoo__amount-radio"
+                      type="radio"
+                      name="zoo_bar"
+                      id="100"
+                      value="100" />
+                    <span class="amount__item"></span>
+                    <p>
+                      <span class="amount__monetary-unit">$</span>100
+                    </p></label
+                  >
+                  <label class="box">
+                    <input
+                      class="zoo__amount-radio"
+                      type="radio"
+                      name="zoo_bar"
+                      id="50"
+                      value="50" />
+                    <span class="amount__item"></span>
+                    <p><span class="amount__monetary-unit">$</span>50</p></label
+                  >
+                  <label class="box">
+                    <input
+                      class="zoo__amount-radio"
+                      type="radio"
+                      name="zoo_bar"
+                      id="25"
+                      value="25" />
+                    <span class="amount__item"></span>
+                    <p><span class="amount__monetary-unit">$</span>25</p></label
+                  >
+                </fieldset>
               </div>
-            </div>
-            <div class="zoo__btn">
-              <button class="btn">Feed a friend now</button>
-            </div>
+              <div class="zoo__amount-row">
+                <div class="zoo__amount-monetary">
+                  <input
+                    type="number"
+                    max="9999"
+                    placeholder="Another amount"
+                    class="zoo__amount-number"
+                    name=""
+                    placeholder="Another amount"
+                    id="" />
+                </div>
+              </div>
+              <div class="zoo-period">
+                <div class="zoo__period-items">
+                  <input
+                    type="radio"
+                    class="period__radio"
+                    name="amount"
+                    id="Monthly" />
+                  <label class="zoo__monthly period" for="Monthly">
+                    <div class="period__radio-fake"></div>
+                    Monthly</label
+                  >
+                  <input
+                    type="radio"
+                    class="period__radio"
+                    name="amount"
+                    id="Once"
+                    checked />
+                  <label class="zoo__once period" for="Once">
+                    <div class="period__radio-fake"></div>
+                    Once</label
+                  >
+                </div>
+              </div>
+              <div class="zoo__btn">
+                <button class="btn">Feed a friend now</button>
+              </div>
+            </form>
             <div class="zoo__network">
               <p class="zoo__network-item">
                 Share with your friends on social networks

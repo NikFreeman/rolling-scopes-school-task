@@ -23,6 +23,9 @@
 .btn:hover {
   background: rgba(228, 114, 9, 1);
 }
+.btn:active {
+  background-color: #4b9200;
+}
 .arrow__elipse {
   transition: color 0.3s ease;
   cursor: pointer;
@@ -36,6 +39,9 @@
 }
 .arrow__elipse:hover {
   background: rgba(228, 114, 9, 1);
+}
+.arrow__elipse:active {
+  background-color: #4b9200;
 }
 .rectangular-btn {
   width: 298px;
@@ -51,13 +57,23 @@
   text-align: center;
   text-transform: uppercase;
   color: #ffffff;
+  cursor: pointer;
 }
 .rectangular-btn:hover {
   background: rgba(228, 114, 9, 1);
+}
+.rectangular-btn:active {
+  background-color: #4b9200;
 }
 .logo {
   border: 1px solid white;
   border-radius: 2px;
   height: 50px;
   width: 80px;
+}
+.logo:hover {
+  border: 1px solid #ababab;
+}
+.logo:active {
+  border: 1px solid #4b9200;
 }
