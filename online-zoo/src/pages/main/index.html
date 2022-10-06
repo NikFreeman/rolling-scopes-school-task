@@ -10,12 +10,12 @@
     <header class="header">
       <div class="wrapper">
         <div class="header__wrapper">
-          <div class="header__logo logo">
+          <div class="logo">
             <a href="#" class="header__logo-link">
-              <h1 class="header__logo-title">
+              <p class="header__logo-title">
                 PetStory <br />
                 online
-              </h1>
+              </p>
               <img
                 class="header__logo-image"
                 src="<%=require('./../../assets/images/bamboo.svg') %>"
@@ -49,11 +49,42 @@
               >Designed by ©</a
             >
           </div>
+          <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+              <span></span>
+            </label>
+
+            <ul class="menu__box">
+              <div class="header__logo logo logo-gold">
+                <a href="#" class="header__logo-link">
+                  <h1 class="header__logo-title header__logo-gold">
+                    PetStory <br />
+                    online
+                  </h1>
+                  <img
+                    class="header__logo-image"
+                    src="<%=require('./../../assets/images/bamboo-gold.svg') %>"
+                    alt="bamboo" />
+                </a>
+              </div>
+              <li><a class="menu__item" href="#">About</a></li>
+              <li><a class="menu__item" href="#">Map</a></li>
+              <li><a class="menu__item" href="#">Zoos</a></li>
+              <li><a class="menu__item" href="./donate.html">Donate</a></li>
+              <li><a class="menu__item" href="#">Contact us</a></li>
+              <li>
+                <a class="menu__item" target="_blank " href="http://figma.com"
+                  >Designed by ©</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </header>
     <main>
-      <section class="watch">
+      <section class="watch none">
         <div class="wrapper">
           <div class="watch__elipse"></div>
           <h2 class="watch__content">
@@ -65,7 +96,7 @@
           </div>
         </div>
       </section>
-      <section class="backstage">
+      <section class="backstage none">
         <div class="flower__zoo">
           <img
             src="<%=require('./../../assets/images/flower_foto.png') %> "
@@ -100,139 +131,149 @@
         </div>
       </section>
       <section class="pets">
-        <div class="arrow__elipse elipse__left">
-          <img
-            class="arrow__left-vector"
-            src="<%=require('./../../assets/images/arroy-left.svg') %>"
-            alt="arrow left" />
-        </div>
-        <div class="arrow__elipse elipse__rigth">
-          <img
-            class="arrow__right-vector"
-            src="<%=require('./../../assets/images/arroy-right.svg') %>"
-            alt="arrow right" />
-        </div>
-        <div class="wrapper">
+        <div class="pets__wrapper">
           <div class="sliders">
-            <div class="card__slider">
+            <div class="arrow__elipse elipse__left">
               <img
-                class="card__slider-image"
-                src="<%=require('./../../assets/images/cart panda.png') %>"
-                alt="panda" />
-              <div class="card__row">
-                <div class="card__content">
-                  <div class="card-content-title">giant Pandas</div>
-                  <div class="card__content-subtitle">
-                    Native to Southwest China
+                class="arrow__left-vector"
+                src="<%=require('./../../assets/images/arroy-left.svg') %>"
+                alt="arrow left" />
+            </div>
+            <div class="arrow__elipse elipse__rigth">
+              <img
+                class="arrow__right-vector"
+                src="<%=require('./../../assets/images/arroy-right.svg') %>"
+                alt="arrow right" />
+            </div>
+            <div class="card__slider-row">
+              <div class="card__slider">
+                <img
+                  class="card__slider-image"
+                  src="<%=require('./../../assets/images/cart panda.png') %>"
+                  alt="panda" />
+                <div class="card__row">
+                  <div class="card__content">
+                    <div class="card-content-title">giant Pandas</div>
+                    <div class="card__content-subtitle">
+                      Native to Southwest China
+                    </div>
+                  </div>
+                  <div class="card__food">
+                    <img
+                      class="card__food-image"
+                      src="<%=require('./../../assets/images/banana-bamboo_icon.svg') %>"
+                      alt="" />
                   </div>
                 </div>
-                <div class="card__food">
-                  <img
-                    class="card__food-image"
-                    src="<%=require('./../../assets/images/banana-bamboo_icon.svg') %>"
-                    alt="" />
-                </div>
               </div>
-            </div>
-            <div class="card__slider">
-              <img
-                class="card__slider-image"
-                src="<%=require('./../../assets/images/cart eagles.png') %>"
-                alt="panda" />
-              <div class="card__row">
-                <div class="card__content">
-                  <div class="card-content-title"><p>Eagles</p></div>
-                  <div class="card__content-subtitle">
-                    <p>Native to South America</p>
+              <div class="card__slider">
+                <img
+                  class="card__slider-image"
+                  src="<%=require('./../../assets/images/cart eagles.png') %>"
+                  alt="panda" />
+                <div class="card__row">
+                  <div class="card__content">
+                    <div class="card-content-title"><p>Eagles</p></div>
+                    <div class="card__content-subtitle">
+                      <p>Native to South America</p>
+                    </div>
+                  </div>
+                  <div class="card__food">
+                    <img
+                      class="card__food-image"
+                      src="<%=require('./../../assets/images/meet-fish_icon.svg') %>"
+                      alt="" />
                   </div>
                 </div>
-                <div class="card__food">
-                  <img
-                    class="card__food-image"
-                    src="<%=require('./../../assets/images/meet-fish_icon.svg') %>"
-                    alt="" />
-                </div>
               </div>
-            </div>
-            <div class="card__slider">
-              <img
-                class="card__slider-image"
-                src="<%=require('./../../assets/images/cart gorilas.png') %>"
-                alt="gorilas" />
-              <div class="card__row">
-                <div class="card__content">
-                  <div class="card-content-title">Gorillas</div>
-                  <div class="card__content-subtitle">Native to Congo</div>
-                </div>
-                <div class="card__food">
-                  <img
-                    class="card__food-image"
-                    src="<%=require('./../../assets/images/banana-bamboo_icon.svg') %>"
-                    alt="" />
-                </div>
-              </div>
-            </div>
-            <div class="card__slider">
-              <img
-                class="card__slider-image"
-                src="<%=require('./../../assets/images/cart Sloth.png') %>"
-                alt="panda" />
-              <div class="card__row">
-                <div class="card__content">
-                  <div class="card-content-title">Two-toed Sloth</div>
-                  <div class="card__content-subtitle">
-                    Mesoamerica, South America
+              <div class="card__slider">
+                <img
+                  class="card__slider-image"
+                  src="<%=require('./../../assets/images/cart gorilas.png') %>"
+                  alt="gorilas" />
+                <div class="card__row">
+                  <div class="card__content">
+                    <div class="card-content-title">Gorillas</div>
+                    <div class="card__content-subtitle">Native to Congo</div>
+                  </div>
+                  <div class="card__food">
+                    <img
+                      class="card__food-image"
+                      src="<%=require('./../../assets/images/banana-bamboo_icon.svg') %>"
+                      alt="" />
                   </div>
                 </div>
-                <div class="card__food">
-                  <img
-                    class="card__food-image"
-                    src="<%=require('./../../assets/images/banana-bamboo_icon.svg') %>"
-                    alt="" />
-                </div>
               </div>
             </div>
-            <div class="card__slider">
-              <img
-                class="card__slider-image"
-                src="<%=require('./../../assets/images/cart cheetahs.png') %>"
-                alt="panda" />
-              <div class="card__row">
-                <div class="card__content">
-                  <div class="card-content-title">cheetahs</div>
-                  <div class="card__content-subtitle">Native to Africa</div>
-                </div>
-                <div class="card__food">
-                  <img
-                    class="card__food-image"
-                    src="<%=require('./../../assets/images/meet-fish_icon.svg') %>"
-                    alt="" />
+
+            <div class="card__slider-row">
+              <div class="card__slider">
+                <img
+                  class="card__slider-image"
+                  src="<%=require('./../../assets/images/cart Sloth.png') %>"
+                  alt="panda" />
+                <div class="card__row">
+                  <div class="card__content">
+                    <div class="card-content-title">Two-toed Sloth</div>
+                    <div class="card__content-subtitle">
+                      Mesoamerica, South America
+                    </div>
+                  </div>
+                  <div class="card__food">
+                    <img
+                      class="card__food-image"
+                      src="<%=require('./../../assets/images/banana-bamboo_icon.svg') %>"
+                      alt="" />
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="card__slider">
-              <img
-                class="card__slider-image"
-                src="<%=require('./../../assets/images/cart penguins.png') %>"
-                alt="panda" />
-              <div class="card__row">
-                <div class="card__content">
-                  <div class="card-content-title">Penguins</div>
-                  <div class="card__content-subtitle">Native to Antarctica</div>
+              <div class="card__slider">
+                <img
+                  class="card__slider-image"
+                  src="<%=require('./../../assets/images/cart cheetahs.png') %>"
+                  alt="panda" />
+                <div class="card__row">
+                  <div class="card__content">
+                    <div class="card-content-title">cheetahs</div>
+                    <div class="card__content-subtitle">Native to Africa</div>
+                  </div>
+                  <div class="card__food">
+                    <img
+                      class="card__food-image"
+                      src="<%=require('./../../assets/images/meet-fish_icon.svg') %>"
+                      alt="" />
+                  </div>
                 </div>
-                <div class="card__food">
-                  <img
-                    class="card__food-image"
-                    src="<%=require('./../../assets/images/meet-fish_icon.svg') %>"
-                    alt="" />
+              </div>
+              <div class="card__slider">
+                <img
+                  class="card__slider-image"
+                  src="<%=require('./../../assets/images/cart penguins.png') %>"
+                  alt="panda" />
+                <div class="card__row">
+                  <div class="card__content">
+                    <div class="card-content-title">Penguins</div>
+                    <div class="card__content-subtitle">
+                      Native to Antarctica
+                    </div>
+                  </div>
+                  <div class="card__food">
+                    <img
+                      class="card__food-image"
+                      src="<%=require('./../../assets/images/meet-fish_icon.svg') %>"
+                      alt="" />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="pets__btn">
-            <button class="btn">choose your favorite</button>
+          <div class="wrapper">
+            <div class="pets__btn">
+              <button class="btn">choose your favorite</button>
+            </div>
           </div>
         </div>
+
         <div class="decor__left">
           <img
             class="decor__left-foto"
@@ -246,7 +287,7 @@
             alt="strelitzia" />
         </div>
       </section>
-      <section class="pick">
+      <section class="pick none">
         <div class="wrapper">
           <div class="pick__rectange">
             <h2 class="pick__title">Pick and feed a friend</h2>
@@ -324,7 +365,7 @@
           </div>
         </div>
       </section>
-      <section class="testimonials">
+      <section class="testimonials none">
         <div class="wrapper">
           <h3 class="testimonials__title">Testimonials</h3>
           <div class="testimonials__row">

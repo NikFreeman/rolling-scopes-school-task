@@ -1,7 +1,10 @@
 .wrapper {
-  max-width: 1160px;
+  max-width: 1200px;
+  padding-left: 20px;
+  padding-right: 20px;
   margin: 0 auto;
 }
+
 .btn {
   background: linear-gradient(113.96deg, #f9804b 1.49%, #fe9013 101.44%);
   border-radius: 25px;
@@ -76,4 +79,28 @@
 }
 .logo:active {
   border: 1px solid #4b9200;
+}
+.logo-gold {
+  border: 1px solid #fe9013;
+}
+.logo:hover {
+  border: 1px solid #ababab;
+}
+.logo:active {
+  border: 1px solid #4b9200;
+}
+.none {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+}
+@media (max-width: 1000px) {
+}
+@media (max-width: 750px) {
+}
+@media (max-width: 640px) {
+}
+
+@media (max-width: 320px) {
 }
