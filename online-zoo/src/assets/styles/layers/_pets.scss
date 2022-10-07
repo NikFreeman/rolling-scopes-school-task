@@ -8,7 +8,7 @@
   max-width: 1322px;
   margin: 0 auto;
 }
-.elipse__left {
+.ellipse__left {
   align-self: center;
   justify-self: start;
   grid-column: 1 / 2;
@@ -18,12 +18,50 @@
   display: flex;
   column-gap: 30px;
 }
-.elipse__rigth {
+.ellipse__right {
   align-self: center;
   justify-self: end;
   grid-column: 3 / 4;
   grid-row: 1 / 3;
 }
+.carousel {
+  display: flex;
+  position: relative;
+  left: -1162px;
+}
+.carousel-wrapper {
+  width: 1163px;
+  overflow: hidden;
+}
+.card__slider-row {
+  margin: 0 1px;
+}
+@keyframes move-left {
+  from {
+    left: -1161px;
+  }
+  to {
+    left: 0px;
+  }
+}
+.transition-left {
+  animation-name: move-left;
+  animation-duration: 3s;
+}
+@keyframes move-right {
+  from {
+    left: -1161px;
+  }
+  to {
+    left: -2324px;
+  }
+}
+
+.transition-right {
+  animation-name: move-right;
+  animation-duration: 3s;
+}
+
 .pets {
   padding-top: 176px;
   position: relative;
@@ -95,17 +133,19 @@
   position: absolute;
   bottom: -105px;
   left: 0px;
+  transition: all 0.5s ease;
 }
 .decor__right {
   position: absolute;
   bottom: -105px;
   right: 0px;
 }
-.pets__container {
-  position: relative;
-  width: 1325px;
-  margin: 0 auto;
+.decor__left-photo,
+.decor__right-photo {
+  width: 100%;
+  height: 100%;
 }
+
 @media (max-width: 1324px) {
   .pets__wrapper {
     max-width: 1000px;
@@ -126,7 +166,7 @@
     border: 1px #f9804b solid;
     border-radius: 5px;
   }
-  .elipse__left {
+  .ellipse__left {
     align-self: center;
     margin-left: 324px;
     grid-column: 1 / 2;
@@ -137,7 +177,7 @@
     display: flex;
     column-gap: 30px;
   }
-  .elipse__rigth {
+  .ellipse__right {
     align-self: center;
 
     margin-right: 324px;
@@ -148,6 +188,39 @@
   .card__slider:hover .card__slider-image {
     transform: scale(1.5);
     opacity: 60%;
+  }
+  .carousel {
+    display: flex;
+    position: relative;
+    left: -942px;
+  }
+  .carousel-wrapper {
+    width: 940px;
+    overflow: hidden;
+  }
+  @keyframes move-left {
+    from {
+      left: -940px;
+    }
+    to {
+      left: 0px;
+    }
+  }
+  @keyframes move-right {
+    from {
+      left: -940px;
+    }
+    to {
+      left: -1882px;
+    }
+  }
+  .decor__left {
+    width: 194px;
+    height: 202px;
+  }
+  .decor__right {
+    width: 241px;
+    height: 180px;
   }
 }
 @media (max-width: 999px) {
@@ -162,7 +235,6 @@
     grid-template-columns: 600px;
     grid-template-rows: 332px 62px 332px;
     row-gap: 15px;
-    transition-duration: 1s;
   }
   .card__slider {
     width: 285px;
@@ -170,10 +242,8 @@
     border: 1px #f9804b solid;
     border-radius: 5px;
   }
-  .card__slider-row {
-    overflow: hidden;
-  }
-  .elipse__rigth {
+
+  .ellipse__right {
     align-self: center;
 
     margin-right: 223px;
@@ -181,21 +251,111 @@
     grid-row: 2 / 3;
     transition-duration: 1s;
   }
-  .elipse__left {
+  .ellipse__left {
     align-self: center;
     margin-left: 223px;
     grid-column: 1 / 2;
     grid-row: 2 / 3;
     transition-duration: 1s;
   }
-  .card__slider-row .card__slider:last-child {
+  .card__slider-row .card__slider:nth-child(2) {
     display: none;
   }
-}
-@media (max-width: 750px) {
-}
-@media (max-width: 640px) {
+  .carousel {
+    display: flex;
+    position: relative;
+    left: -602px;
+  }
+  .carousel-wrapper {
+    width: 602px;
+    overflow: hidden;
+  }
+  @keyframes move-left {
+    from {
+      left: -600px;
+    }
+    to {
+      left: 0px;
+    }
+  }
+  @keyframes move-right {
+    from {
+      left: -600px;
+    }
+    to {
+      left: -1204px;
+    }
+  }
+  .decor__right {
+    width: 175px;
+    height: 131px;
+  }
+  .decor__left {
+    left: -50px;
+  }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 640px) {
+  .pets__wrapper {
+    padding-left: 9px;
+  }
+}
+
+@media (max-width: 638px) {
+  .pets__wrapper {
+    max-width: 330px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .ellipse__left,
+  .ellipse__right {
+    display: none;
+  }
+  .sliders {
+    display: grid;
+    grid-template-columns: 315px;
+    grid-template-rows: 684px 684px;
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+  .card__slider-left,
+  .card__slider-right {
+    display: none;
+  }
+  .card__slider-row {
+    flex-direction: column;
+    row-gap: 20px;
+  }
+  .card__slider {
+    width: 285px;
+    height: 332px;
+    border: 1px #f9804b solid;
+    border-radius: 5px;
+  }
+  .carousel {
+    display: flex;
+    position: relative;
+
+    left: 0px;
+  }
+  .carousel-wrapper {
+    width: 315px;
+    overflow: hidden;
+  }
+  .pets__btn {
+    margin-top: 20px;
+    margin-bottom: 60px;
+  }
+  .decor__right {
+    width: 85px;
+    height: 71px;
+    bottom: -49px;
+  }
+  .decor__left {
+    width: 79px;
+    height: 72px;
+    left: 0px;
+    bottom: -49px;
+  }
 }

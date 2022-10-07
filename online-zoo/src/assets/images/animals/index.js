@@ -7,7 +7,7 @@ import panda from "./panda.png";
 import penguins from "./penguins.png";
 import sloth from "./sloth.png";
 import elk from "./elk.png";
-import lunx from "./lunx.png";
+import lynx from "./lynx.png";
 import stork from "./stork.png";
 import wolf from "./wolf.png";
 
@@ -21,7 +21,7 @@ const animals = {
   penguins,
   sloth,
   elk,
-  lunx,
+  lynx,
   stork,
   wolf,
 };

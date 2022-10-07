@@ -65,9 +65,9 @@ const animalsData = [
     foodType: foods.herbivores,
   },
   {
-    id: "lunx",
-    name: "lunx",
-    img: animals.lunx,
+    id: "lynx",
+    name: "lynx",
+    img: animals.lynx,
     native: "Europe, Asia and North America",
     foodType: foods.carnivores,
   },

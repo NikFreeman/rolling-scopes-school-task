@@ -28,7 +28,7 @@ const cssLoaders = (extra) => {
 module.exports = {
   mode: "development",
   entry: {
-    main: "./online-zoo/src/pages/main/index.js",
+    index: "./online-zoo/src/pages/main/index.js",
     donate: "./online-zoo/src/pages/donate/index.js",
   },
   output: {
@@ -36,14 +36,23 @@ module.exports = {
     filename: "[name].js",
     assetModuleFilename: "images/[name][ext]",
   },
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+    },
+  },
   plugins: [
     new HTMLWebpackPlugin({
+      inject: true,
       template: "./online-zoo/src/pages/main/index.html",
       filename: "index.html",
+      chunks: ["index"],
     }),
     new HTMLWebpackPlugin({
+      inject: true,
       template: "./online-zoo/src/pages/donate/index.html",
       filename: "donate.html",
+      chunks: ["donate"],
     }),
     new MiniCssExtractPlugin({
       filename: filename("css"),

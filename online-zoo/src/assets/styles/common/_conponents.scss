@@ -29,7 +29,7 @@
 .btn:active {
   background-color: #4b9200;
 }
-.arrow__elipse {
+.arrow__ellipse {
   transition: color 0.3s ease;
   cursor: pointer;
   height: 62px;
@@ -40,10 +40,10 @@
   align-items: center;
   display: flex;
 }
-.arrow__elipse:hover {
+.arrow__ellipse:hover {
   background: rgba(228, 114, 9, 1);
 }
-.arrow__elipse:active {
+.arrow__ellipse:active {
   background-color: #4b9200;
 }
 .rectangular-btn {
