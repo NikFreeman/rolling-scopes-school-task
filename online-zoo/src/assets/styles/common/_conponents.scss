@@ -5,6 +5,10 @@
   margin: 0 auto;
 }
 
+* {
+  outline: 1px dotted lightblue;
+}
+
 .btn {
   background: linear-gradient(113.96deg, #f9804b 1.49%, #fe9013 101.44%);
   border-radius: 25px;
@@ -93,11 +97,29 @@
   display: none;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1159px) {
+  .wrapper {
+    max-width: 940px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+  }
 }
-@media (max-width: 1000px) {
+@media (max-width: 999px) {
+  .wrapper {
+    max-width: 600px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+  }
 }
-@media (max-width: 750px) {
+@media (max-width: 639px) {
+  .wrapper {
+    max-width: 300px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0 auto;
+  }
 }
 @media (max-width: 640px) {
 }

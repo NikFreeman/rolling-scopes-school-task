@@ -1,6 +1,5 @@
 import animalsData from "../data/animals";
-export { createSlider };
-
+import { random } from "./common";
 function createSlider() {
   const CARD_LEFT = document.querySelectorAll(
     ".card__slider-left .card__slider"
@@ -79,6 +78,4 @@ function animalsRandom() {
   return sliderAnimals;
 }
 
-function random(min, max) {
-  return Math.floor(Math.random() * (max - min) + min);
-}
+export { createSlider };
