@@ -1,7 +1,3 @@
-/*!**********************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./online-zoo/src/assets/styles/style.scss ***!
-  \**********************************************************************************************************************************/
-@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap);
 /*!*******************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./online-zoo/src/assets/styles/vendors/normalize.scss ***!
   \*******************************************************************************************************/
@@ -381,25 +377,27 @@ ul {
 p {
   margin: 0;
   padding: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
-
-/*!*************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./online-zoo/src/assets/styles/pages/_main.scss ***!
-  \*************************************************************************************************/
-body {
+* {
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
-  max-width: 1600px;
-  margin: auto;
 }
 
 /*!********************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./online-zoo/src/assets/styles/common/_conponents.scss ***!
   \********************************************************************************************************/
 .wrapper {
-  max-width: 1160px;
+  max-width: 1200px;
+  padding-left: 20px;
+  padding-right: 20px;
   margin: 0 auto;
 }
+
+/** {
+  outline: 1px dotted lightblue;
+}*/
+
 .btn {
   background: linear-gradient(113.96deg, #f9804b 1.49%, #fe9013 101.44%);
   border-radius: 25px;
@@ -421,7 +419,10 @@ body {
 .btn:hover {
   background: rgba(228, 114, 9, 1);
 }
-.arrow__elipse {
+.btn:active {
+  background-color: #4b9200;
+}
+.arrow__ellipse {
   transition: color 0.3s ease;
   cursor: pointer;
   height: 62px;
@@ -432,8 +433,11 @@ body {
   align-items: center;
   display: flex;
 }
-.arrow__elipse:hover {
+.arrow__ellipse:hover {
   background: rgba(228, 114, 9, 1);
+}
+.arrow__ellipse:active {
+  background-color: #4b9200;
 }
 .rectangular-btn {
   width: 298px;
@@ -449,15 +453,51 @@ body {
   text-align: center;
   text-transform: uppercase;
   color: #ffffff;
+  cursor: pointer;
 }
 .rectangular-btn:hover {
   background: rgba(228, 114, 9, 1);
 }
-.logo {
-  border: 1px solid white;
-  border-radius: 2px;
-  height: 50px;
-  width: 80px;
+.rectangular-btn:active {
+  background-color: #4b9200;
+}
+
+.logo-gold {
+  border: 1px solid #fe9013;
+}
+
+.none {
+  display: none;
+}
+
+@media (max-width: 1599px) {
+  .wrapper {
+    max-width: 1000px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 999px) {
+  .wrapper {
+    max-width: 640px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 639px) {
+  .wrapper {
+    max-width: 320px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 640px) {
+}
+
+@media (max-width: 320px) {
 }
 
 /*!****************************************************************************************************!*\
@@ -465,22 +505,48 @@ body {
   \****************************************************************************************************/
 .header__wrapper {
   display: flex;
-  word-wrap: wrap;
   align-items: center;
   padding-bottom: 14px;
   padding-top: 14px;
+  position: relative;
 }
+
 .header {
-  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 80px;
+  background-color: black;
+  z-index: 10;
 }
 .header__list {
   display: flex;
   list-style-type: none;
 }
-
-.header__logo-title {
-  font-family: "Roboto", sans-serif;
+.header__logo-border {
+  border: 1px solid white;
+  border-radius: 2px;
+  height: 50px;
+  width: 80px;
+}
+.header__logo-border:hover {
+  border: 1px solid #ababab;
+}
+.header__logo-border:active {
+  border: 1px solid #4b9200;
+}
+.header__logo {
+  border: 1px solid white;
+  border-radius: 2px;
+  height: 50px;
+  width: 80px;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.header__logo-title,
+.menu__box-title {
   font-style: normal;
   font-weight: 400;
   font-size: 19.0145px;
@@ -489,8 +555,11 @@ body {
   color: #ffffff;
   margin-top: 3.5px;
 }
-
-.header__logo-image {
+.header__logo-gold {
+  color: #fe9013;
+}
+.header__logo-image,
+.menu__box-image {
   position: relative;
   top: -26px;
   left: 10px;
@@ -537,468 +606,160 @@ body {
   cursor: default;
 }
 
-/*!***************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./online-zoo/src/assets/styles/layers/_watch.scss ***!
-  \***************************************************************************************************/
-.watch__content {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 106.496px;
-  line-height: 75%;
-  text-align: center;
-  text-transform: uppercase;
-  color: #ffffff;
-  padding-left: 660px;
-  padding-top: 86px;
-  position: relative;
+.hamburger-menu {
+  display: none;
 }
-.watch__content-mark {
-  color: rgba(255, 238, 46, 1);
+#menu__toggle:checked ~ .menu__btn > span {
+  transform: rotate(45deg);
 }
-.watch__elipse {
-  background: linear-gradient(113.96deg, #f9804b 1.49%, #fe9013 101.44%);
-  border-radius: 50%;
-  position: absolute;
-  z-index: 0;
-  height: 465px;
-  width: 465px;
-  margin-top: 12px;
-  margin-left: 587px;
+#menu__toggle:checked ~ .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0);
 }
-.watch {
-  background: rgba(40, 48, 53, 1);
-  background-image: url("images/Giant%20Panda.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center top -80px;
+#menu__toggle:checked ~ .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
 }
-.watch__btn {
-  margin-left: 763px;
-  margin-top: 60px;
-  margin-bottom: 100px;
+#menu__toggle:checked ~ .menu__box-area .menu__box {
+  visibility: visible;
+  left: 0;
+}
+#menu__toggle:checked ~ .menu__box-area {
+  visibility: visible;
+  opacity: 1;
 }
 
-/*!*******************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./online-zoo/src/assets/styles/layers/_backstage.scss ***!
-  \*******************************************************************************************************/
-.flower__zoo {
-  position: absolute;
-  top: -127px;
-  right: 0px;
-  backdrop-filter: blur(2px);
-}
-.backstage__row {
-  display: flex;
-  gap: 87px;
-  margin-top: 140px;
-}
-.backstage {
-  position: relative;
-}
-
-.backstage__title {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 48px;
-  line-height: 120%;
-  color: #333b41;
-}
-.backstage__subtitle {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 120%;
-  color: #333b41;
-  padding-top: 56px;
-}
-.backstage__paragraph1 {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 130%;
-  color: #333b41;
-  padding-top: 22px;
-}
-.backstage__paragraph2 {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 140%;
-  color: #333b41;
-  padding-top: 32px;
-}
-
-/*!**************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./online-zoo/src/assets/styles/layers/_pets.scss ***!
-  \**************************************************************************************************/
-.sliders {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  position: relative;
-  row-gap: 20px;
-  column-gap: 29px;
-}
-.elipse__left {
-  position: absolute;
-  left: 138px;
-  top: 580px;
-}
-.elipse__rigth {
-  position: absolute;
-  right: 140px;
-  top: 580px;
-}
-.pets {
-  padding-top: 176px;
-  position: relative;
-}
-.card__slider {
-  box-sizing: border-box;
-  width: 367px;
-  height: 426px;
-  border: 1px #f9804b solid;
-  border-radius: 5px;
-}
-.card__row {
-  display: flex;
-  padding-left: 16px;
-  padding-right: 10px;
-  padding-top: 2px;
-  display: flex;
-  justify-content: space-between;
-}
-.card-content-title {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 140%;
-  text-transform: uppercase;
-  color: #000000;
-}
-.pets__btn {
-  display: flex;
-  margin-top: 80px;
-  justify-content: center;
-  margin-bottom: 100px;
-}
-.card__content-subtitle {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 300;
-  font-size: 15px;
-  line-height: 120%;
-  color: #000000;
-}
-.card__food {
-  padding-top: 1px;
-  padding-right: 1px;
-}
-.decor__left {
-  position: absolute;
-  bottom: -105px;
-  left: 0px;
-}
-.decor__right {
-  position: absolute;
-  bottom: -105px;
-  right: 0px;
-}
-
-/*!**************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./online-zoo/src/assets/styles/layers/_pick.scss ***!
-  \**************************************************************************************************/
-.pick {
-  background: linear-gradient(
-      315.75deg,
-      rgba(254, 210, 144, 0.7) 30.06%,
-      #febdab 100.95%,
-      rgba(254, 210, 144, 0.7) 106.36%
-    ),
-    linear-gradient(
-      315.75deg,
-      rgba(254, 189, 171, 0.74) 30.06%,
-      rgba(243, 169, 248, 0.66) 50.74%,
-      #e0d8f0 80.49%,
-      #eaf7fe 127.9%,
-      #eaf7fe 149.54%
-    ),
-    linear-gradient(
-      315.75deg,
-      rgba(254, 189, 171, 0.74) 30.06%,
-      rgba(243, 169, 248, 0.66) 50.74%,
-      #e0d8f0 80.49%,
-      #eaf7fe 127.9%,
-      #eaf7fe 149.54%
-    );
-  opacity: 0.9;
-  padding-top: 69px;
-  padding-bottom: 100px;
-}
-.pick__rectange {
-  background: rgba(253, 253, 255, 0.52);
-  backdrop-filter: blur(2px);
-  border-radius: 20px;
-  padding-bottom: 60px;
-}
-.pick__row {
-  display: flex;
-}
-.pick__card {
-  width: 168px;
-  height: 244px;
-  border-radius: 5px;
-}
-.pick__title {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 48px;
-  line-height: 120%;
-  /* identical to box height, or 58px */
-  text-align: center;
-  color: #fe9013;
-  padding-top: 41px;
-  padding-left: 3px;
-}
-.pick__subtitle-big {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 120%;
-  /* identical to box height, or 29px */
-  color: #333b41;
-  padding-top: 32px;
-}
-.pick__content {
-  margin-left: 100px;
-}
-.pick__subtitle-mark {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 130%;
-  /* identical to box height, or 21px */
-  color: #333b41;
-  padding-top: 40px;
-}
-.pick__subtitle {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 130%;
-  color: #333b41;
-  padding-top: 10px;
-  padding-right: 198px;
-}
-.pick__subtitle-link {
-  text-decoration: none;
-  color: #333b41;
-}
-.pick__subtitle-underground {
-  border-bottom: 1px solid rgba(254, 144, 19, 1);
-  padding-bottom: 2px;
-}
-.pick-how-it-work__title {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 36px;
-  line-height: 130%;
-  /* identical to box height, or 47px */
-  color: #333b41;
-  text-align: center;
-  padding-top: 61px;
-}
-.pick__btn {
-  display: flex;
-  margin-top: 60px;
-  justify-content: center;
-}
-.pick__row {
-  padding-top: 40px;
-  padding-left: 198px;
-  padding-right: 198px;
-}
-.pick__card-rectangle {
-  width: 167px;
-  height: 165px;
-  background: #ffffff;
-  border-radius: 5px;
-  border: 1px solid #f9804b;
-  display: flex;
-}
-.pick__card + .pick__arrow {
-  margin-right: 29px;
-  margin-left: 30px;
-}
-.pick__arrow {
-  padding-top: 61px;
-}
-.pick__card-rectangle-image {
-  margin: auto;
-}
-.pick__card-title {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 140%;
-  color: #333b41;
-  padding-top: 30px;
-}
-
-/*!**********************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./online-zoo/src/assets/styles/layers/_testimonials.scss ***!
-  \**********************************************************************************************************/
-.testimonials {
-  position: relative;
-}
-.testimonials__title {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 36px;
-  line-height: 130%;
-  text-align: center;
-  color: #333b41;
-  margin-top: 140px;
-}
-.testimonials__row {
-  display: flex;
-  gap: 30px;
-  margin-top: 47px;
-}
-.testimonials__card {
-  background: linear-gradient(0deg, #f1f3f2, #f1f3f2),
-    linear-gradient(
-      315.75deg,
-      rgba(254, 189, 171, 0.74) 30.06%,
-      rgba(243, 169, 248, 0.66) 50.74%,
-      #e0d8f0 80.49%,
-      #eaf7fe 127.9%,
-      #eaf7fe 149.54%
-    ),
-    linear-gradient(
-      315.75deg,
-      rgba(254, 189, 171, 0.74) 30.06%,
-      rgba(243, 169, 248, 0.66) 50.74%,
-      #e0d8f0 80.49%,
-      #eaf7fe 127.9%,
-      #eaf7fe 149.54%
-    );
-  width: 265px;
-  height: 385px;
-  border-radius: 20px;
-  border: 2px solid rgba(254, 189, 171, 0.74);
-  overflow: hidden;
-}
-.testimonials__card-textarea {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 300;
-  font-size: 15px;
-  line-height: 120%;
-  color: #767474;
-}
-.testimonials__card-row {
-  display: flex;
-}
-.testimonials__card-subtitle {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 300;
-  font-size: 15px;
-  line-height: 120%;
-  color: #bdbdbd;
-}
-.testimonials__card-title {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 120%;
-  color: #000000;
-}
-.testimonials__card-row {
-  margin-top: 12px;
-  margin-left: 16px;
-}
-.testimonials__card-content {
-  margin-left: 8px;
-}
-.testimonials__card-text {
-  height: 307px;
-  width: 237px;
-  padding-left: 14px;
-  padding-top: 6px;
-  overflow: hidden;
-}
-.testimonials__progress-bar {
-  margin-top: 21px;
+.menu__btn {
   display: flex;
   align-items: center;
-}
-.testimonials__input-range {
-  margin-left: auto;
-  margin-right: auto;
-  width: 599px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-.testimonials__input-range::-webkit-slider-runnable-track {
-  border-radius: 5px;
-  height: 8px;
-  border: 0.5px solid rgba(254, 144, 19, 1);
-  background-color: rgba(255, 238, 233, 0.801);
-}
-.testimonials__input-range::-webkit-slider-thumb {
-  background: rgba(228, 114, 9, 1);
-  border: 1px solid rgba(254, 144, 19, 1);
-  border-radius: 5px;
+  position: absolute;
+  top: 5px;
+  left: 594px;
+  width: 26px;
+  height: 26px;
   cursor: pointer;
-  width: 116px;
-  height: 6px;
-  -webkit-appearance: none;
+  z-index: 1;
 }
 
-.testimonials__input-range::-moz-range-track {
-  border-radius: 5px;
-  height: 8px;
-  border: 0.5px solid rgba(254, 144, 19, 1);
-  background-color: rgba(255, 238, 233, 0.801);
-}
-.testimonials__input-range::-moz-range-thumb {
-  background: rgba(228, 114, 9, 1);
-  border: 1px solid rgba(254, 144, 19, 1);
-  border-radius: 5px;
-  cursor: pointer;
-  width: 116px;
-  height: 6px;
-  -webkit-appearance: none;
-  margin-top: -4px;
-}
-.testimonials__btn {
-  margin-top: 31px;
-  padding-bottom: 200px;
-}
-.testimonials__decor {
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
   position: absolute;
-  width: 245.92px;
-  height: 295.45px;
-  right: 0px;
-  bottom: 0px;
-  z-index: -1;
-  background: url(images/leav_foto.png);
+  width: 100%;
+  height: 3px;
+  background-color: #838383;
+  transition-duration: 0.25s;
+}
+.menu__btn > span::before {
+  content: "";
+  top: -8px;
+}
+.menu__btn > span::after {
+  content: "";
+  top: 8px;
+}
+
+.menu__box {
+  display: block;
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  left: -100%;
+  width: 300px;
+  height: 100%;
+  margin: 0;
+  list-style: none;
+  background-color: #eceff1;
+  box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+  transition-duration: 0.5s;
+}
+.menu__box-area {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition-duration: 0.5s;
+}
+.close__popup {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.menu__item {
+  display: block;
+  padding: 12px 24px;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #333b41;
+  transition-duration: 0.25s;
+}
+.menu__item:hover {
+  background-color: rgba(228, 114, 9, 1);
+}
+.menu__item:active {
+  background-color: #4b9200;
+}
+@media (max-width: 1599px) {
+  .header__item + .header__item {
+    margin-left: 48px;
+  }
+}
+
+@media (max-width: 999px) {
+  .header__design {
+    display: none;
+  }
+  .header__nav {
+    display: none;
+  }
+  .hamburger-menu {
+    display: block;
+  }
+  #menu__toggle {
+    opacity: 0;
+  }
+  .header__logo-title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12.2899px;
+    line-height: 120%;
+    border: #fff;
+  }
+  .header {
+    height: 34px;
+  }
+  .header__logo-border {
+    border: 1px solid black;
+    height: 30px;
+    width: 50px;
+  }
+  .header__wrapper {
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+  .header__logo-image {
+    top: -18px;
+    left: 0px;
+    width: 17px;
+    height: 11px;
+  }
+}
+
+@media (max-width: 639px) {
+  .menu__btn {
+    left: 290px;
+  }
 }
 
 /*!****************************************************************************************************!*\
@@ -1035,10 +796,10 @@ body {
 }
 .footer__email-input {
   border-radius: 2px;
-  border: 0.7px solid #f9804b;
+  border: 0.7px solid rgba(211, 20, 20, 1);
   width: 222px;
   background-color: #111115;
-  color: #fff;
+  color: rgba(211, 20, 20, 1);
   height: 37px;
   margin-right: 11px;
 }
@@ -1051,6 +812,31 @@ body {
   color: #bdbdbd;
   padding-left: 8px;
 }
+.footer__email-input:valid {
+  border: 0.7px solid #f9804b;
+  color: #bdbdbd;
+}
+.footer__email-input:invalid {
+  border: 0.7px solid rgba(211, 20, 20, 1);
+  color: rgba(211, 20, 20, 1);
+}
+.footer__email-input:focus {
+  outline: none;
+}
+.footer__email-input:valid + .footer__btn-submit {
+  color: rgba(75, 146, 0, 1);
+  background: #f1f3f2;
+  border: 1px solid #333b41;
+}
+.footer__email-input:invalid + .footer__btn-submit {
+  color: rgba(211, 20, 20, 1);
+  border: 1px solid rgba(211, 20, 20, 1);
+}
+.footer__btn-submit:active {
+  color: rgba(75, 146, 0, 1);
+  border: 1px solid rgba(75, 146, 0, 1);
+}
+
 .footer__email {
   display: flex;
   align-items: end;
@@ -1068,7 +854,7 @@ body {
 .social__networks-item {
   display: flex;
 }
-.social__network-elipse {
+.social__network-ellipse {
   width: 26px;
   height: 26px;
   border-radius: 50%;
@@ -1110,12 +896,14 @@ body {
   padding-left: 10px;
   padding-top: 3px;
 }
-.social__network-elipse:hover {
-  background: #f9804b;
+
+.network-link:hover .network-title {
+  color: #4b9200;
 }
-.network-title:hover {
-  color: #f9804b;
+.network-link:hover .social__network-ellipse {
+  background: #4b9200;
 }
+
 .social__networks-link {
   text-decoration: none;
 }
@@ -1137,13 +925,28 @@ body {
   border-radius: 5px;
   width: 129px;
   height: 42px;
+  cursor: pointer;
+  transition: 0.3s;
 }
+
 .footer__nav {
   margin-left: 120px;
 }
-
-/*!**************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./online-zoo/src/assets/styles/style.scss (1) ***!
-  \**************************************************************************************************************************************/
-
+.footer__logo {
+  border: 1px solid white;
+  border-radius: 2px;
+  height: 50px;
+  width: 80px;
+}
+.footer__logo:hover {
+  border: 1px solid #ababab;
+}
+.footer__logo:active {
+  border: 1px solid #4b9200;
+}
+@media (max-width: 999px) {
+  .footer {
+    display: none;
+  }
+}
 
