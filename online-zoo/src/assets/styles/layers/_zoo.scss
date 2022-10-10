@@ -249,6 +249,7 @@
 .zoo__amount-number::-webkit-outer-spin-button,
 .zoo__amount-number::-webkit-inner-spin-button {
   -webkit-appearance: none;
+  appearance: none;
   margin: 0;
 }
 .zoo__amount-number::placeholder {

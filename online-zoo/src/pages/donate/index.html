@@ -45,6 +45,37 @@
           </div>
         </div>
       </div>
+      <div class="hamburger-menu">
+        <input id="menu__toggle" type="checkbox" />
+        <label class="menu__btn" for="menu__toggle">
+          <span></span>
+        </label>
+
+        <ul class="menu__box">
+          <div class="header__logo logo logo-gold">
+            <a href="index.html" class="header__logo-link">
+              <h1 class="header__logo-title header__logo-gold">
+                PetStory <br />
+                online
+              </h1>
+              <img
+                class="header__logo-image"
+                src="<%=require('./../../assets/images/bamboo-gold.svg') %>"
+                alt="bamboo" />
+            </a>
+          </div>
+          <li><a class="menu__item" href="./index.html">About</a></li>
+          <li><a class="menu__item" href="#">Map</a></li>
+          <li><a class="menu__item" href="#">Zoos</a></li>
+          <li><a class="menu__item" href="#">Donate</a></li>
+          <li><a class="menu__item" href="#">Contact us</a></li>
+          <li>
+            <a class="menu__item" target="_blank " href="http://figma.com"
+              >Designed by ©</a
+            >
+          </li>
+        </ul>
+      </div>
     </header>
     <main>
       <section class="donate__header-bg">
@@ -103,7 +134,7 @@
                       class="zoo__amount-radio"
                       type="radio"
                       name="zoo_bar"
-                      id="5000"
+                      data-id="5000"
                       value="5000" />
 
                     <span class="amount__item"></span>
@@ -117,9 +148,8 @@
                       class="zoo__amount-radio"
                       type="radio"
                       name="zoo_bar"
-                      id="2000"
+                      data-id="2000"
                       value="2000"
-                      checked
                       required />
 
                     <span class="amount__item"></span>
@@ -133,7 +163,7 @@
                       class="zoo__amount-radio"
                       type="radio"
                       name="zoo_bar"
-                      id="1000"
+                      data-id="1000"
                       value="1000" />
                     <span class="amount__item"></span>
                     <p><span class="amount__monetary-unit">$</span>1000</p>
@@ -143,7 +173,7 @@
                       class="zoo__amount-radio"
                       type="radio"
                       name="zoo_bar"
-                      id="500"
+                      data-id="500"
                       value="500" />
                     <span class="amount__item"></span>
                     <p>
@@ -155,7 +185,7 @@
                       class="zoo__amount-radio"
                       type="radio"
                       name="zoo_bar"
-                      id="250"
+                      data-id="250"
                       value="250" />
                     <span class="amount__item"></span>
                     <p>
@@ -167,8 +197,9 @@
                       class="zoo__amount-radio"
                       type="radio"
                       name="zoo_bar"
-                      id="100"
-                      value="100" />
+                      data-id="100"
+                      value="100"
+                      checked />
                     <span class="amount__item"></span>
                     <p>
                       <span class="amount__monetary-unit">$</span>100
@@ -179,7 +210,7 @@
                       class="zoo__amount-radio"
                       type="radio"
                       name="zoo_bar"
-                      id="50"
+                      data-id="50"
                       value="50" />
                     <span class="amount__item"></span>
                     <p><span class="amount__monetary-unit">$</span>50</p></label
@@ -189,7 +220,7 @@
                       class="zoo__amount-radio"
                       type="radio"
                       name="zoo_bar"
-                      id="25"
+                      data-id="25"
                       value="25" />
                     <span class="amount__item"></span>
                     <p><span class="amount__monetary-unit">$</span>25</p></label
@@ -205,7 +236,7 @@
                     class="zoo__amount-number"
                     name=""
                     placeholder="Another amount"
-                    id="" />
+                    id="amount-number" />
                 </div>
               </div>
               <div class="zoo-period">
