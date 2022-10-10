@@ -15,7 +15,7 @@
 .watch__content-mark {
   color: rgba(255, 238, 46, 1);
 }
-.watch__elipse {
+.watch__ellipse {
   background: linear-gradient(113.96deg, #f9804b 1.49%, #fe9013 101.44%);
   border-radius: 50%;
   position: absolute;
@@ -26,11 +26,12 @@
   margin-left: 587px;
 }
 .watch {
+  margin-top: 80px;
   background: rgba(40, 48, 53, 1);
   background-image: url("./../../images/Giant\ Panda.jpg");
   background-repeat: no-repeat;
-  background-size: auto;
-  background-position: center top -80px;
+  background-size: cover;
+  background-position: center;
 }
 
 .watch__btn {
@@ -38,32 +39,57 @@
   margin-top: 60px;
   margin-bottom: 6.25%;
 }
-@media (max-width: 1200px) {
+@media (max-width: 1599px) {
   .watch__content {
     font-weight: 700;
     font-size: 85px;
     line-height: 75%;
+    margin-left: 484px;
   }
-  .watch__elipse {
+  .watch__ellipse {
     width: 367px;
     height: 367px;
-    margin-left: 45.6%;
+    margin-left: 426px;
   }
 }
 @media (max-width: 1000px) {
+  .watch {
+    display: none;
+  }
   .watch__content {
     font-weight: 700;
     font-size: 85px;
     line-height: 75%;
   }
-  .watch__elipse {
+  .watch__ellipse {
     width: 367px;
     height: 367px;
   }
 }
-@media (max-width: 750px) {
+@media (max-width: 999px) {
+  .watch__content {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 54.2894px;
+    line-height: 75%;
+  }
+  .watch__ellipse {
+    width: 237.6px;
+    height: 237.6px;
+  }
+  .watch__btn {
+    margin-left: 65.7%;
+    margin-top: 60px;
+    margin-bottom: 6.25%;
+  }
 }
-@media (max-width: 640px) {
+@media (max-width: 639px) {
+  .watch__content {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 75%;
+  }
 }
 
 @media (max-width: 320px) {

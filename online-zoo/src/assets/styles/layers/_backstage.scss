@@ -48,3 +48,8 @@
   color: #333b41;
   padding-top: 32px;
 }
+@media (max-width: 1599px) {
+  .backstage {
+    display: none;
+  }
+}

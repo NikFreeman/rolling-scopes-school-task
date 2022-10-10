@@ -7,68 +7,68 @@
     <title>Online Zoo</title>
   </head>
   <body>
-    <header class="header">
-      <div class="wrapper">
-        <div class="header__wrapper">
-          <div class="logo">
-            <a href="#" class="header__logo-link">
-              <p class="header__logo-title">
-                PetStory <br />
-                online
-              </p>
-              <img
-                class="header__logo-image"
-                src="<%=require('./../../assets/images/bamboo.svg') %>"
-                alt="bamboo" />
-            </a>
-          </div>
-          <nav class="header__nav">
-            <ul class="header__list">
-              <li class="header__item">
-                <a href="" class="header__link active-link">About</a>
-              </li>
-              <li class="header__item">
-                <a href="" class="header__link">Map</a>
-              </li>
-              <li class="header__item">
-                <a href="" class="header__link">Zoos</a>
-              </li>
-              <li class="header__item">
-                <a href="./donate.html" class="header__link">Donate</a>
-              </li>
-              <li class="header__item">
-                <a href="" class="header__link">Contact us</a>
-              </li>
-            </ul>
-          </nav>
-          <div class="header__design">
-            <a
-              class="header__design-link"
-              target="_blank "
-              href="http://figma.com"
-              >Designed by ©</a
-            >
-          </div>
-          <div class="hamburger-menu">
-            <input id="menu__toggle" type="checkbox" />
-            <label class="menu__btn" for="menu__toggle">
-              <span></span>
-            </label>
-
+    <header class="header" id="#header">
+      <div class="wrapper header__wrapper">
+        <div class="header__logo-border">
+          <a href="#" class="header__logo-link">
+            <p class="header__logo-title">
+              PetStory <br />
+              online
+            </p>
+            <img
+              class="header__logo-image"
+              src="<%=require('./../../assets/images/bamboo.svg') %>"
+              alt="bamboo" />
+          </a>
+        </div>
+        <nav class="header__nav">
+          <ul class="header__list">
+            <li class="header__item">
+              <a href="" class="header__link active-link">About</a>
+            </li>
+            <li class="header__item">
+              <a href="" class="header__link">Map</a>
+            </li>
+            <li class="header__item">
+              <a href="" class="header__link">Zoos</a>
+            </li>
+            <li class="header__item">
+              <a href="./donate.html" class="header__link">Donate</a>
+            </li>
+            <li class="header__item">
+              <a href="" class="header__link">Contact us</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__design">
+          <a
+            class="header__design-link"
+            target="_blank "
+            href="http://figma.com"
+            >Designed by ©</a
+          >
+        </div>
+        <div class="hamburger-menu">
+          <input id="menu__toggle" type="checkbox" />
+          <label class="menu__btn" for="menu__toggle">
+            <span></span>
+          </label>
+          <div class="menu__box-area">
+            <a href="index.html" class="close__popup"></a>
             <ul class="menu__box">
-              <div class="header__logo logo logo-gold">
+              <div class="header__logo logo-gold">
                 <a href="#" class="header__logo-link">
-                  <h1 class="header__logo-title header__logo-gold">
+                  <h1 class="menu__box-title header__logo-gold">
                     PetStory <br />
                     online
                   </h1>
                   <img
-                    class="header__logo-image"
+                    class="menu__box-image"
                     src="<%=require('./../../assets/images/bamboo-gold.svg') %>"
                     alt="bamboo" />
                 </a>
               </div>
-              <li><a class="menu__item" href="#">About</a></li>
+              <li><a class="menu__item" href="index.html">About</a></li>
               <li><a class="menu__item" href="#">Map</a></li>
               <li><a class="menu__item" href="#">Zoos</a></li>
               <li><a class="menu__item" href="./donate.html">Donate</a></li>
@@ -84,7 +84,7 @@
       </div>
     </header>
     <main>
-      <section class="watch none">
+      <section class="watch">
         <div class="wrapper">
           <div class="watch__ellipse"></div>
           <h2 class="watch__content">
@@ -96,7 +96,7 @@
           </div>
         </div>
       </section>
-      <section class="backstage none">
+      <section class="backstage">
         <div class="flower__zoo">
           <img
             src="<%=require('./../../assets/images/flower_foto.png') %> "
@@ -130,7 +130,7 @@
           </div>
         </div>
       </section>
-      <section class="pets none">
+      <section class="pets">
         <div class="pets__wrapper">
           <div class="sliders">
             <div class="arrow__ellipse ellipse__left" id="ellipse-left">
@@ -558,9 +558,9 @@
             alt="strelitzia" />
         </div>
       </section>
-      <section class="pick none">
+      <section class="pick">
         <div class="wrapper">
-          <div class="pick__rectange">
+          <div class="pick__rectangle">
             <h2 class="pick__title">Pick and feed a friend</h2>
             <div class="pick__content">
               <p class="pick__subtitle-big">
@@ -813,10 +813,10 @@
 
         <div class="testimonials__decor"></div>
         <div class="testimonial__popup">
-          <a href="#" class="close__popup popup__close"></a>
+          <a href="#header" class="close__popup popup__close"></a>
           <div class="popup__body">
             <div class="popup__card">
-              <a href="#" class="popup__close">X</a>
+              <a href="#header" class="popup__close">X</a>
               <div class="popup__content">
                 <div class="popup__card-image">
                   <img class="popup__image-account" src="" alt="account" />

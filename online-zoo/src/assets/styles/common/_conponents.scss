@@ -72,34 +72,18 @@
 .rectangular-btn:active {
   background-color: #4b9200;
 }
-.logo {
-  border: 1px solid white;
-  border-radius: 2px;
-  height: 50px;
-  width: 80px;
-}
-.logo:hover {
-  border: 1px solid #ababab;
-}
-.logo:active {
-  border: 1px solid #4b9200;
-}
+
 .logo-gold {
   border: 1px solid #fe9013;
 }
-.logo:hover {
-  border: 1px solid #ababab;
-}
-.logo:active {
-  border: 1px solid #4b9200;
-}
+
 .none {
   display: none;
 }
 
-@media (max-width: 1159px) {
+@media (max-width: 1599px) {
   .wrapper {
-    max-width: 940px;
+    max-width: 1000px;
     padding-left: 20px;
     padding-right: 20px;
     margin: 0 auto;
@@ -107,7 +91,7 @@
 }
 @media (max-width: 999px) {
   .wrapper {
-    max-width: 600px;
+    max-width: 640px;
     padding-left: 20px;
     padding-right: 20px;
     margin: 0 auto;
@@ -115,7 +99,7 @@
 }
 @media (max-width: 639px) {
   .wrapper {
-    max-width: 300px;
+    max-width: 320px;
     padding-left: 10px;
     padding-right: 10px;
     margin: 0 auto;

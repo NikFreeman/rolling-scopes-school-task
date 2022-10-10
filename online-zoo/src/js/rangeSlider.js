@@ -13,9 +13,10 @@ function createRangeSlider() {
   let stepTransform;
   const initResize = () => {
     windowWidth = window.innerWidth;
-    stepTransform = windowWidth > 1160 ? 295 : 330;
-    let max = windowWidth > 1160 ? 7 : 8;
+    stepTransform = windowWidth > 1600 ? 295 : 322;
+    let max = windowWidth > 1600 ? 7 : 8;
     inputRange.setAttribute("max", max);
+    console.log(window.innerWidth);
     window.innerWidth < 999
       ? TESTIMONIALS_CARD.forEach((x) => x.addEventListener("click", getID))
       : TESTIMONIALS_CARD.forEach((x) => x.removeEventListener("click", getID));

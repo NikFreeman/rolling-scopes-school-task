@@ -144,18 +144,24 @@
   z-index: -1;
   background: url(./../../images/leav_foto.png);
 }
-@media (max-width: 1160px) {
+@media (max-width: 1599px) {
   .testimonials__wrapper {
     width: 960px;
     margin: 0 auto;
     overflow: hidden;
   }
   .testimonials__card {
-    width: 300px;
+    width: 293px;
     height: 391px;
     border-radius: 20px;
     border: 2px solid rgba(254, 189, 171, 0.74);
     flex: 0 0 auto;
+  }
+  .testimonials__card-text {
+    height: 309px;
+    width: 259px;
+    padding-left: 14px;
+    padding-right: 14px;
   }
 }
 
