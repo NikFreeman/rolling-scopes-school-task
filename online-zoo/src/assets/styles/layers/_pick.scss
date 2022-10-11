@@ -140,7 +140,48 @@
   color: #333b41;
   padding-top: 30px;
 }
+
+@media (max-width: 1599px) {
+  .pick__content {
+    margin-left: 49px;
+    margin-right: 49px;
+  }
+  .pick__row {
+    padding-left: 88px;
+    padding-right: 88px;
+  }
+}
+
 @media (max-width: 999px) {
+  .pick__row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .pick__arrow {
+    display: none;
+  }
+}
+@media (max-width: 639px) {
+  .pick__title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+    text-align: center;
+  }
+  .pick__subtitle-big {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+    text-align: center;
+  }
+  .pick__subtitle-mark {
+    display: none;
+  }
+  .pick__subtitle {
+    display: none;
+  }
   .pick__row {
     flex-direction: column;
   }
