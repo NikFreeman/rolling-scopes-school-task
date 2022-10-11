@@ -48,7 +48,6 @@ body {
   padding-bottom: 200px;
 }
 .zoo__title {
-  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-size: 36px;
@@ -133,7 +132,6 @@ body {
   margin-left: 63px;
 }
 .zoo__amount {
-  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -200,9 +198,6 @@ body {
   opacity: 1;
 }
 
-.amount-5000 {
-  margin-left: 1px;
-}
 .amount__monetary-unit {
   font-weight: 500;
   font-size: 20px;
@@ -357,6 +352,169 @@ body {
   font-size: 16px;
   line-height: 140%;
   color: #333b41;
+}
+@media (max-width: 1599px) {
+  .zoo__progress-bar {
+    margin-left: 65px;
+    margin-right: 65px;
+  }
+  .donate-5000 {
+    display: none;
+  }
+  .zoo-box {
+    width: 810px;
+  }
+  .zoo-box2 {
+    width: 764px;
+  }
+}
+@media (max-width: 999px) {
+  .zoo__progress-bar {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .zoo__rectangle {
+    backdrop-filter: none;
+  }
+  .zoo-box {
+    width: 600px;
+    left: -3px;
+  }
+  .zoo-box2 {
+    width: 524px;
+  }
+  .animals__diet {
+    margin-left: 24px;
+  }
+  .zoo__title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+  }
+  .zoo__content {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+  }
+  .zoo__rectangle-title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 120%;
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+  .zoo__rectangle-content {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+    text-align: center;
+    padding-left: 0px;
+  }
+  .donate-2000 {
+    display: none;
+  }
+}
+@media (max-width: 639px) {
+  .zoo-box {
+    width: 300px;
+    height: 13px;
+    left: -3px;
+    top: -26px;
+  }
+  .zoo-box2 {
+    width: 244px;
+    height: 1px;
+  }
+  .animals__diet {
+    margin-left: 5px;
+    margin-top: 5px;
+  }
+  .animals__diet-day {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40.6015px;
+    line-height: 80%;
+    margin-top: 41px;
+  }
+  .animals__diet-content {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 9.02255px;
+    line-height: 140%;
+  }
+  .animals__diet-symbol {
+    margin-top: 58px;
+  }
+
+  .animals__diet-animal {
+    width: 151.4px;
+    height: 111.92px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  .animals__diet-image {
+    height: 100%;
+    width: 100%;
+  }
+  .box {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 140%;
+  }
+  .amount__monetary-unit {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 140%;
+    text-transform: lowercase;
+  }
+  .amount__item::before {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #ffee2e;
+    top: 50%;
+    left: 21%;
+    transform: translate(50%, -50%);
+  }
+  .amount__item::after {
+    left: -22%;
+  }
+  .zoo__subtitle {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+  }
+  .zoo__rectangle-title {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+    padding-left: 34px;
+    padding-right: 34px;
+  }
+  .zoo__rectangle-content {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+  }
+  .zoo__network-item {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+  }
+  .zoo__network {
+    margin-left: -1px;
+  }
+  .zoo__amount {
+    margin-left: 5px;
+    margin-top: 10px;
+  }
 }
 
 /*!***************************************************************************************************************************************!*\
