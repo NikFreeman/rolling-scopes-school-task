@@ -16,12 +16,10 @@ function createRangeSlider() {
     stepTransform = windowWidth > 1600 ? 295 : 322;
     let max = windowWidth > 1600 ? 7 : 8;
     inputRange.setAttribute("max", max);
-    console.log(window.innerWidth);
     window.innerWidth < 999
       ? TESTIMONIALS_CARD.forEach((x) => x.addEventListener("click", getID))
       : TESTIMONIALS_CARD.forEach((x) => x.removeEventListener("click", getID));
   };
-  initResize();
   let newValue = function () {
     let newTransform = inputRange.value * stepTransform;
     TESTIMONIALS_SLIDER.setAttribute(
@@ -29,6 +27,7 @@ function createRangeSlider() {
       `transform: translateX(-${newTransform}px)`
     );
   };
+  initResize();
   inputRange.addEventListener("input", newValue);
   window.addEventListener("resize", initResize);
 }
@@ -90,7 +89,13 @@ function openPopup() {
   TESTIMONIALS_POPUP.classList.add("open");
 }
 function getID(e) {
+  console.log(e.target);
+  console.log(e.currentTarget);
+  let targetDiv = e.target.closest(".testimonials__card");
+  console.log(targetDiv);
+
   currentID = e.currentTarget.getAttribute("id");
+
   openPopup();
 }
 function closePopup() {
