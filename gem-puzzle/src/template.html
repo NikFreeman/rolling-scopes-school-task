@@ -1,0 +1,41 @@
+<!--
+  Welcome to Tailwind Play, the official Tailwind CSS playground!
+
+  Everything here works just like it does when you're running Tailwind locally
+  with a real build pipeline. You can customize your config file, use features
+  like `@apply`, or even add third-party plugins.
+
+  Feel free to play with this example if you're just learning, or trash it and
+  start from scratch if you know enough to be dangerous. Have fun!
+-->
+<div class="h-screen w-full bg-gradient-to-b from-slate-400 to-slate-700">
+  <header class="mx-auto text-center">
+    <h1>Gem puzzle</h1>
+    <nav class="m-1.5">
+      <button class="w-44 rounded-md border bg-green-600 px-3 font-semibold text-slate-200 hover:bg-slate-900 hover:text-slate-100">Shuffle and restart</button>
+      <button class="w-44 rounded-md border bg-green-600 px-3 hover:bg-slate-900 hover:text-slate-100">Save</button>
+      <button class="w-44 rounded-md border bg-green-600 px-3 hover:bg-slate-900 hover:text-slate-100">Result</button>
+    </nav>
+    <div class="my-3 flex justify-center">
+      <p class="w-40">Movie:333</p>
+      <p class="w-40">second: ##:##</p>
+    </div>
+  </header>
+  <main class="mx-auto max-w-fit">
+    <canvas width="500" height="500"> </canvas>
+  </main>
+  <footer class="mx-auto max-w-max">
+    <div class="text-center">Frame size: 4x4</div>
+    <div class="flex">
+      Other size:
+      <ol class="flex justify-between gap-3 px-3">
+        <li>3x3</li>
+        <li>4x4</li>
+        <li>5x5</li>
+        <li>6x6</li>
+        <li>7x7</li>
+        <li>8x8</li>
+      </ol>
+    </div>
+  </footer>
+</div>

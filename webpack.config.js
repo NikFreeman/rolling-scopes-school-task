@@ -34,6 +34,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].js",
     assetModuleFilename: "images/[name][ext]",
+    clean: true,
   },
   optimization: {
     splitChunks: {
@@ -64,7 +65,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: cssLoaders(),
+        use: cssLoaders("postcss-loader"),
       },
       {
         test: /\.less$/,
@@ -73,6 +74,11 @@ module.exports = {
       {
         test: /\.s[ac]ss$/,
         use: cssLoaders("sass-loader"),
+      },
+      {
+        test: /\.css$/i,
+        include: path.resolve(__dirname, "src"),
+        use: ["style-loader", "css-loader", "postcss-loader"],
       },
     ],
   },
