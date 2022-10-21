@@ -70,16 +70,69 @@ function createMain() {
   paragraph2.textContent = "Time: 00:00";
   div.appendChild(paragraph2);
   const canvas = document.createElement("canvas");
+  canvas.width = 400;
+  canvas.height = 400;
+  canvas.classList.add("border", "bg-slate-400", "rounded-md");
   main.appendChild(div);
   main.appendChild(canvas);
   fragment.appendChild(main);
   document.body.appendChild(fragment);
 }
-function createFooter() {}
+function createFooter() {
+  const fragment = document.createDocumentFragment();
+  const footer = document.createElement("footer");
+  footer.classList.add("mx-auto", "max-w-max");
+  fragment.appendChild(footer);
+  const textFrameSize = document.createElement("span");
+  textFrameSize.setAttribute("id", "area-size");
+  textFrameSize.classList.add("font-bold", "text-slate-300");
+  textFrameSize.textContent = "4x4";
+  const frameSize = document.createElement("div");
+  frameSize.classList.add("text-center", "text-slate-300", "my-3");
+  frameSize.textContent = "Frame size: ";
+  frameSize.appendChild(textFrameSize);
+  footer.appendChild(frameSize);
+  const selectSize = document.createElement("div");
+  selectSize.classList.add("flex", "text-slate-300");
+  selectSize.textContent = " Other size: ";
+  footer.appendChild(selectSize);
+  const ol = document.createElement("ol");
+  ol.classList.add("flex", "justify-between", "gap-2", "px-1");
+  selectSize.appendChild(ol);
+  for (let i = 3; i < 9; i++) {
+    const li = document.createElement("li");
+    const input = document.createElement("input");
+    input.classList.add("peer", "hidden");
+    input.setAttribute("type", "radio");
+    input.setAttribute("name", "size");
+    input.setAttribute("id", `size${i}`);
+    input.setAttribute("value", i);
+    if (i == 4) input.setAttribute("checked", "true");
+    const label = document.createElement("label");
+    label.classList.add(
+      "text-slate-300",
+      "font-bold",
+      "hover:text-slate-500",
+      "peer-checked:text-green-500",
+
+      "peer-checked:animate-pulse",
+      "hover:transition-colors",
+      "duration-500",
+      "hover:text-slate-100"
+    );
+    label.setAttribute("for", `size${i}`);
+    label.textContent = `${i}x${i}`;
+    li.appendChild(input);
+    li.appendChild(label);
+    ol.appendChild(li);
+  }
+
+  document.body.appendChild(fragment);
+}
 function appendStructure() {
   settingBody();
   createHeader();
   createMain();
-  // createFooter();
+  createFooter();
 }
 export { appendStructure };
