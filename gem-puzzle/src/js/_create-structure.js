@@ -39,6 +39,7 @@ function newGame() {
       minute = 0;
       clearTimeout(timerID);
       timer = true;
+      showCount();
       showTimer();
     }
   }
