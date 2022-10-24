@@ -177,8 +177,11 @@ function recordTable() {
 function closeRecord(event) {
   let id = event.target.getAttribute("id");
   if (id === "tableRecords" || id === "btn-close") {
-    timer = true;
-    showTimer();
+    if (puzzle.length != 0 && !check.checkArray(puzzle)) {
+      clearTimeout(timerID);
+      timer = true;
+      showTimer();
+    }
     const tableRecords = document.getElementById("tableRecords");
     if (tableRecords) tableRecords.remove();
   }
