@@ -1,9 +1,9 @@
 function random(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
-class puzzleArray {
+class PuzzleArray {
   constructor(dimension = 4) {
-    this.dimension = dimension;
+    this.dimension = parseInt(dimension);
     this._startArray = [];
     this._shuffleArray = [];
   }
@@ -19,7 +19,9 @@ class puzzleArray {
   getShuffleArray() {
     return this._shuffleArray;
   }
-
+getDimension () {
+  return this.dimension;
+}
   createArray() {
     let size = this.dimension * this.dimension;
     const arr = new Array(size).fill(0).map((x, index) => {
@@ -46,7 +48,9 @@ class puzzleArray {
           .filter((x) => x < tempShuffleArray[key] && x != 0);
         sum += filteredArray.length;
       }
-      sum += Math.floor(tempShuffleArray.indexOf(0) / this.dimension) + 1;
+      if (this.dimension % 2 === 0) {
+        sum += Math.floor(tempShuffleArray.indexOf(0) / this.dimension) + 1;
+      }
       unsolvable = sum % 2 !== 0;
     }
     let resultArray = [];
@@ -59,5 +63,11 @@ class puzzleArray {
     this.setShuffleArray(resultArray);
     return this.getShuffleArray();
   }
+  checkArray(arr) {
+    let tempArr = arr.flat(1);
+    return tempArr.every((x, index) => {
+      return x === this._startArray[index];
+    });
+  }
 }
-export { puzzleArray };
+export { PuzzleArray };

@@ -1,5 +1,335 @@
-import { divide } from "lodash";
-import buttons from "../../data/buttons";
+import { padStart } from "lodash";
+import buttons from "../data/buttons";
+import boneSound from "../assets/audio";
+import { PuzzleArray } from "./_randomize-puzzle";
+
+let puzzle = [];
+let records = [];
+let check;
+let widthArea;
+let widthCell;
+let count = 0;
+let timer = false;
+let timerID;
+let second = 0;
+let minute = 0;
+let sound = true;
+
+const onHandler = function (event) {
+  let id = event.target.getAttribute("id");
+  console.log(id);
+  if (id === "newGame") newGame();
+  if (id === "saveGame") saveGame();
+  if (id === "loadGame") loadGame();
+  if (id === "soundMute") soundMute();
+  if (id === "recordTable") recordTable();
+};
+
+function newGame() {
+  const frameSize = document.getElementsByName("size");
+  for (let elem of frameSize) {
+    if (elem.checked) {
+      check = new PuzzleArray(elem.value);
+      check.createArray();
+      puzzle = check.shuffleArray();
+      let areaSize = document.getElementById("area-size");
+      areaSize.textContent = `${elem.value}x${elem.value}`;
+      drawField();
+      second = 0;
+      minute = 0;
+      clearTimeout(timerID);
+      timer = true;
+      showTimer();
+    }
+  }
+}
+
+function saveGame() {
+  if (puzzle !== []) {
+    localStorage.setItem("puzzle", JSON.stringify(puzzle));
+    localStorage.setItem("check", JSON.stringify(check));
+    localStorage.setItem("minute", minute.toString());
+    localStorage.setItem("second", second.toString());
+    localStorage.setItem("count", count.toString());
+  }
+}
+function loadGame() {
+  const tempPuzzle = JSON.parse(localStorage.getItem("puzzle"));
+  if (tempPuzzle) {
+    puzzle = tempPuzzle;
+
+    let tempCheck = JSON.parse(localStorage.getItem("check"));
+    check = new PuzzleArray(tempCheck.dimension);
+    check.createArray();
+    minute = parseInt(localStorage.getItem("minute"));
+    second = parseInt(localStorage.getItem("second"));
+    count = parseInt(localStorage.getItem("count"));
+    let areaSize = document.getElementById("area-size");
+    areaSize.textContent = `${check.dimension}x${check.dimension}`;
+    drawField();
+    clearTimeout(timerID);
+    timer = true;
+    showTimer();
+    showCount();
+  }
+}
+function soundMute() {
+  const btnSound = document.getElementById("soundMute");
+  sound = !sound;
+  localStorage.setItem("sound", sound);
+  if (sound) {
+    btnSound.textContent = "Sound off";
+  } else {
+    btnSound.textContent = "Sound on";
+  }
+}
+
+function recordTable() {
+  const fragment = document.createDocumentFragment();
+}
+function showTimer() {
+  if (timer) {
+    const tagTimer = document.getElementById("timer");
+    ++second;
+    if (second === 60) {
+      second = 0;
+      ++minute;
+      minute = minute === 60 ? 0 : minute;
+    }
+    tagTimer.textContent = `Time: ${padStart(
+      String(minute),
+      2,
+      "0"
+    )}:${padStart(String(second), 2, "0")}`;
+    timerID = setTimeout(showTimer, 1000);
+  }
+}
+
+function drawField() {
+  const canvas = document.querySelector("canvas");
+  widthArea = parseInt(canvas.getAttribute("width"));
+  widthCell = Math.ceil(widthArea / puzzle.length);
+  const context = canvas.getContext("2d");
+  context.clearRect(0, 0, widthArea, widthArea);
+  for (let i = 0; i < puzzle.length; i++) {
+    for (let j = 0; j < puzzle[i].length; j++) {
+      if (puzzle[j][i] > 0) {
+        context.fillStyle = "teal";
+        context.strokeStyle = "black";
+        context.fillRect(
+          widthCell * i + 2,
+          widthCell * j,
+          widthCell - 3,
+          widthCell - 3
+        );
+        context.strokeRect(
+          widthCell * i + 2,
+          widthCell * j,
+          widthCell - 3,
+          widthCell - 3
+        );
+        let fontSize = `${Math.ceil(widthCell / 3)}px sans-serif`;
+        context.font = fontSize;
+        context.textAlign = "center";
+        context.fillStyle = "black";
+        context.fillText(
+          puzzle[j][i],
+          widthCell * i + Math.ceil(widthCell / 2),
+          widthCell * j + 2 * Math.ceil(widthCell / 3) - 4
+        );
+      }
+    }
+  }
+  canvas.classList.add("cursor-move");
+  canvas.addEventListener("click", moveCell);
+}
+function moveCell(event) {
+  const canvas = document.querySelector("canvas");
+  let i = Math.ceil(event.offsetX / widthCell) - 1;
+  let j = Math.ceil(event.offsetY / widthCell) - 1;
+  //move cell left
+  if (i - 1 > -1 && puzzle[j][i - 1] == 0) {
+    drawMove("left", j, i);
+    let temp = puzzle[j][i];
+    puzzle[j][i] = puzzle[j][i - 1];
+    puzzle[j][i - 1] = temp;
+    count++;
+  }
+  //move cell right
+  if (i + 1 < puzzle.length && puzzle[j][i + 1] === 0) {
+    drawMove("right", j, i);
+    let temp = puzzle[j][i];
+    puzzle[j][i] = puzzle[j][i + 1];
+    puzzle[j][i + 1] = temp;
+    count++;
+  }
+  // move cell up
+  if (j - 1 > -1 && puzzle[j - 1][i] == 0) {
+    drawMove("up", j, i);
+    let temp = puzzle[j][i];
+    puzzle[j][i] = puzzle[j - 1][i];
+    puzzle[j - 1][i] = temp;
+    count++;
+  }
+  //move cell down
+  if (j + 1 < puzzle.length && puzzle[j + 1][i] === 0) {
+    drawMove("down", j, i);
+    let temp = puzzle[j][i];
+    puzzle[j][i] = puzzle[j + 1][i];
+    puzzle[j + 1][i] = temp;
+    ++count;
+  }
+  showCount();
+  drawField();
+
+  timer = !check.checkArray(puzzle);
+  if (!timer) {
+    canvas.removeEventListener("click", moveCell);
+    canvas.classList.remove("cursor-move");
+    let rec = localStorage.getItem("records");
+    records = rec ? JSON.parse(rec) : [];
+    let time = `${padStart(String(minute), 2, "0")}:${padStart(
+      String(second),
+      2,
+      "0"
+    )}`;
+    let record = {
+      date: new Date().toLocaleDateString("ru-RU", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+      }),
+      size: `${check.dimension}x${check.dimension}`,
+      time: time,
+      movie: count,
+    };
+    records.push(record);
+    records.push(record);
+    records.push(record);
+    records.push(record);
+    records.push(record);
+    localStorage.setItem("records", JSON.stringify(records.slice(-10)));
+    alert(`Hooray! You solved the puzzle in ${time} and ${count} moves!`);
+  }
+}
+function drawMove(message, j, i) {
+  const canvas = document.querySelector("canvas");
+  const context = canvas.getContext("2d");
+  const bone = new Audio(boneSound);
+  if (sound) {
+    bone.play();
+  }
+  let num = puzzle[j][i];
+  let animateId;
+  if (message === "left") {
+    let x = (i - 1) * widthCell;
+    let y = j * widthCell;
+    let width = 2 * widthCell;
+    let height = widthCell;
+    let speed = -Math.floor(widthCell / 10);
+    let startX = i * widthCell;
+    let startY = j * widthCell;
+    function updateLeft() {
+      startX += speed;
+      if (startX < x) {
+        stopAnimated();
+      } else {
+        moveRect(x, y - 1, width, height, startX, startY);
+        animateId = window.requestAnimationFrame(updateLeft);
+      }
+    }
+    updateLeft();
+  }
+  if (message === "right") {
+    let x = (i + 1) * widthCell;
+    let y = j * widthCell;
+    let width = 2 * widthCell;
+    let height = widthCell;
+    let speed = Math.floor(widthCell / 10);
+    let startX = i * widthCell;
+    let clearX = startX;
+    let startY = j * widthCell;
+    function updateRight() {
+      startX += speed;
+      if (startX > x) {
+        stopAnimated();
+      } else {
+        moveRect(clearX, startY - 1, width, height, startX, startY);
+        animateId = window.requestAnimationFrame(updateRight);
+      }
+    }
+    updateRight();
+  }
+  if (message === "up") {
+    let x = i * widthCell;
+    let y = (j - 1) * widthCell;
+    let width = widthCell;
+    let height = 2 * widthCell;
+
+    let speed = -Math.floor(widthCell / 10);
+    let startX = i * widthCell;
+    let startY = j * widthCell;
+
+    function updateUp() {
+      startY += speed;
+      if (startY < y) {
+        stopAnimated();
+      } else {
+        moveRect(x, y - 1, width, height, startX + 2, startY);
+        animateId = window.requestAnimationFrame(updateUp);
+      }
+    }
+    updateUp();
+  }
+  if (message === "down") {
+    let x = i * widthCell;
+    let y = (j + 1) * widthCell;
+    let width = widthCell;
+    let height = 2 * widthCell;
+    let speed = Math.floor(widthCell / 10);
+    let startX = i * widthCell;
+    let startY = j * widthCell;
+    let clearY = startY;
+    function updateDown() {
+      startY += speed;
+      if (startY > y) {
+        stopAnimated();
+      } else {
+        moveRect(x, clearY - 1, width, height, startX + 2, startY);
+        animateId = window.requestAnimationFrame(updateDown);
+      }
+    }
+    updateDown();
+  }
+
+  function stopAnimated() {
+    drawField();
+    window.cancelAnimationFrame(animateId);
+  }
+  function moveRect(x, y, width, height, startX, startY) {
+    context.clearRect(x, y, width, height);
+    context.fillStyle = "teal";
+    context.strokeStyle = "black";
+    context.fillRect(startX, startY, widthCell - 3, widthCell - 3);
+    context.strokeRect(startX, startY, widthCell - 3, widthCell - 3);
+    let fontSize = `${Math.ceil(widthCell / 3)}px sans-serif`;
+    context.font = fontSize;
+    context.textAlign = "center";
+    context.fillStyle = "black";
+    context.fillText(
+      num,
+      startX + Math.ceil(widthCell / 2) - 2,
+      startY + 2 * Math.ceil(widthCell / 3) - 4
+    );
+  }
+}
+
+function showCount() {
+  const tagCount = document.getElementById("movie");
+  tagCount.textContent = `Movie: ${count}`;
+}
 
 const settingBody = () => {
   document.body.classList.add(
@@ -32,8 +362,21 @@ function createHeader() {
       const button = document.createElement("button");
       button.setAttribute("id", key);
       button.textContent = buttons[key];
+      if (key === "soundMute") {
+        let tempSound = localStorage.getItem("sound");
+        console.log(tempSound, sound, JSON.parse(tempSound));
+        console.log(tempSound === null);
+        sound = tempSound === null ? true : JSON.parse(tempSound);
+        console.log(typeof sound, sound);
+        if (sound) {
+          button.textContent = "Sound off";
+        } else {
+          button.textContent = "Sound on";
+        }
+      }
       button.classList.add(
-        "w-44",
+        "my-1",
+        "w-30",
         "rounded-md",
         "border",
         "bg-green-600",
@@ -44,6 +387,7 @@ function createHeader() {
         "hover:bg-green-900",
         "hover:text-slate-100"
       );
+      button.onclick = onHandler;
       nav.appendChild(button);
     }
   }
@@ -55,6 +399,7 @@ function createHeader() {
   fragment.appendChild(header);
   document.body.appendChild(fragment);
 }
+
 function createMain() {
   const fragment = document.createDocumentFragment();
   const main = document.createElement("main");
@@ -62,11 +407,19 @@ function createMain() {
   const div = document.createElement("div");
   div.classList.add("my-3", "flex", "justify-center");
   const paragraph1 = document.createElement("p");
-  paragraph1.classList.add("w-40");
+  paragraph1.classList.add("w-40", "font-bold", "text-slate-300");
+  paragraph1.setAttribute("id", "movie");
   paragraph1.textContent = "Movie: 0";
   div.appendChild(paragraph1);
   const paragraph2 = document.createElement("p");
-  paragraph2.classList.add("w-40");
+  paragraph2.setAttribute("id", "timer");
+  paragraph2.classList.add(
+    "block",
+    "w-40",
+    "font-bold",
+    "text-slate-300",
+    "text-end"
+  );
   paragraph2.textContent = "Time: 00:00";
   div.appendChild(paragraph2);
   const canvas = document.createElement("canvas");

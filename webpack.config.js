@@ -45,6 +45,7 @@ module.exports = {
     new HTMLWebpackPlugin({
       inject: true,
       template: "./gem-puzzle/src/index.html",
+      favicon: "./gem-puzzle/src/assets/icon/favicon.ico",
       filename: "index.html",
       chunks: ["index"],
     }),
@@ -56,13 +57,18 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(png|jpg|svg|gif)$/,
+        test: /\.(png|jpg|svg|gif|ico)$/,
         type: "asset/resource",
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: "asset/resource",
       },
+      {
+        test: /\.(ogg|mp3|wav|mpe?g)$/i,
+        type: "asset/resource",
+      },
+
       {
         test: /\.css$/,
         use: cssLoaders("postcss-loader"),
