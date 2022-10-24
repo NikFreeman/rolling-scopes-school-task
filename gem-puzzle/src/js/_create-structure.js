@@ -105,7 +105,7 @@ function recordTable() {
   const tableArea = document.createElement("div");
   tableArea.classList.add(
     "mx-auto",
-    "w-2/4",
+    "sm:w-3/4",
     "mt-8",
     "text-slate-900",
     "bg-gray-200",
