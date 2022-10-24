@@ -314,14 +314,6 @@ function moveCell(event) {
       alert(`Hooray! You solved the puzzle in ${time} and ${count} moves!`);
     }, 500);
   }
-  // } else {
-  //   canvas.classList.add("cursor-move");
-  //   canvas.addEventListener("click", moveCell);
-  // }
-}
-function showWin(time, count) {
-  const fragment = document.createDocumentFragment();
-  const div = document.createElement(div);
 }
 
 function drawMove(message, j, i) {
