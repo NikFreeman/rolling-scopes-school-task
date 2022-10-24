@@ -511,7 +511,7 @@ function createMain() {
   const div = document.createElement("div");
   div.classList.add("my-3", "flex", "justify-center");
   const paragraph1 = document.createElement("p");
-  paragraph1.classList.add("w-40", "font-bold", "text-slate-300");
+  paragraph1.classList.add("w-32", "sm:w-40", "font-bold", "text-slate-300");
   paragraph1.setAttribute("id", "movie");
   paragraph1.textContent = "Movie: 0";
   div.appendChild(paragraph1);
@@ -519,7 +519,8 @@ function createMain() {
   paragraph2.setAttribute("id", "timer");
   paragraph2.classList.add(
     "block",
-    "w-40",
+    "w-32",
+    "sm:w-40",
     "font-bold",
     "text-slate-300",
     "text-end"
@@ -527,8 +528,18 @@ function createMain() {
   paragraph2.textContent = "Time: 00:00";
   div.appendChild(paragraph2);
   const canvas = document.createElement("canvas");
-  canvas.width = 400;
-  canvas.height = 400;
+  if (window.innerWidth <= 400) {
+    canvas.width = 300;
+    canvas.height = 300;
+  }
+  if (window.innerWidth > 400 && window.innerWidth <= 768) {
+    canvas.width = 400;
+    canvas.height = 400;
+  }
+  if (window.innerWidth >= 768) {
+    canvas.width = 600;
+    canvas.height = 600;
+  }
   canvas.classList.add("border", "bg-slate-400", "rounded-md");
   main.appendChild(div);
   main.appendChild(canvas);
@@ -586,7 +597,25 @@ function createFooter() {
 
   document.body.appendChild(fragment);
 }
+//desktop(1280px <= width), tablet(768px <= width < 1280px) and mobile(320px <= width < 768px
+function resizeCanvas(event) {
+  const canvas = document.querySelector("canvas");
+  if (window.innerWidth < 410) {
+    canvas.width = 300;
+    canvas.height = 300;
+  }
+  if (window.innerWidth >= 410 && window.innerWidth < 768) {
+    canvas.width = 400;
+    canvas.height = 400;
+  }
+  if (window.innerWidth >= 768) {
+    canvas.width = 600;
+    canvas.height = 600;
+  }
+  if (puzzle.length != 0) drawField();
+}
 function appendStructure() {
+  window.addEventListener("resize", resizeCanvas);
   settingBody();
   createHeader();
   createMain();
