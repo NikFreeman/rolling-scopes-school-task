@@ -34,6 +34,7 @@ function newGame() {
       let areaSize = document.getElementById("area-size");
       areaSize.textContent = `${elem.value}x${elem.value}`;
       drawField();
+      count = 0;
       second = 0;
       minute = 0;
       clearTimeout(timerID);
