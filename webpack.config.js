@@ -34,7 +34,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].js",
     assetModuleFilename: "images/[name][ext]",
-    clean: true,
+    clean: false,
   },
   optimization: {
     splitChunks: {

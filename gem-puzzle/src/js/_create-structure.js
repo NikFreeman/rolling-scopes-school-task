@@ -2,9 +2,9 @@ import { padStart } from "lodash";
 import buttons from "../data/buttons";
 import boneSound from "../assets/audio";
 import { PuzzleArray } from "./_randomize-puzzle";
+import tableHeaderRecords from "../data/tableHeaderRecords";
 
 let puzzle = [];
-let records = [];
 let check;
 let widthArea;
 let widthCell;
@@ -17,7 +17,6 @@ let sound = true;
 
 const onHandler = function (event) {
   let id = event.target.getAttribute("id");
-  console.log(id);
   if (id === "newGame") newGame();
   if (id === "saveGame") saveGame();
   if (id === "loadGame") loadGame();
@@ -85,7 +84,102 @@ function soundMute() {
 }
 
 function recordTable() {
+  let records = [];
+  timer = false;
   const fragment = document.createDocumentFragment();
+  const area = document.createElement("div");
+  area.setAttribute("id", "tableRecords");
+  area.addEventListener("click", closeRecord);
+  area.classList.add(
+    "fixed",
+    "top-0",
+    "left-0",
+    "h-screen",
+    "w-screen",
+    "bg-black",
+    "bg-opacity-70"
+  );
+  fragment.appendChild(area);
+  const tableArea = document.createElement("div");
+  tableArea.classList.add(
+    "mx-auto",
+    "w-2/4",
+    "mt-8",
+    "text-slate-900",
+    "bg-gray-200",
+    "flex",
+    "justify-center",
+    "rounded-2xl",
+    "opacity-100",
+    "relative"
+  );
+  area.appendChild(tableArea);
+  const buttonClose = document.createElement("button");
+  buttonClose.classList.add(
+    "absolute",
+    "top-2.5",
+    "right-6",
+    "font-bold",
+    "hover:text-green-900"
+  );
+  buttonClose.setAttribute("id", "btn-close");
+  buttonClose.addEventListener("click", closeRecord);
+  buttonClose.textContent = "X";
+  tableArea.appendChild(buttonClose);
+  const table = document.createElement("table");
+  table.createCaption();
+  table.caption.textContent = "Record";
+  table.caption.classList.add(
+    "text-2xl",
+    "bg-clip-text",
+    "font-extrabold",
+    "text-green-500",
+    "animate-pulse",
+    "transition-colors",
+    "duration-500"
+  );
+  table.classList.add(
+    "w-9/12",
+    "text-center",
+    "my-7",
+    "border-collapse",
+    "border",
+    "border-slate-700"
+  );
+  table.createTHead();
+  let tr = document.createElement("tr");
+  for (const head in tableHeaderRecords) {
+    let th = document.createElement("th");
+    th.textContent = tableHeaderRecords[head];
+    tr.appendChild(th);
+  }
+  table.tHead.appendChild(tr);
+  const tBody = table.createTBody();
+  let rec = localStorage.getItem("records");
+  records = rec ? JSON.parse(rec) : [];
+  let tableData = records
+    .reverse()
+    .map((x) => {
+      return `<tr>
+          <td>${x.date}</td>
+          <td>${x.size}</td>
+          <td>${x.time}</td>
+          <td>${x.movie}</td>
+        </tr>`;
+    })
+    .join("");
+  tBody.innerHTML = tableData;
+  tableArea.appendChild(table);
+  document.body.appendChild(fragment);
+}
+function closeRecord(event) {
+  let id = event.target.getAttribute("id");
+  if (id === "tableRecords" || id === "btn-close") {
+    timer = true;
+    showTimer();
+    const tableRecords = document.getElementById("tableRecords");
+    if (tableRecords) tableRecords.remove();
+  }
 }
 function showTimer() {
   if (timer) {
@@ -140,8 +234,10 @@ function drawField() {
       }
     }
   }
-  canvas.classList.add("cursor-move");
-  canvas.addEventListener("click", moveCell);
+  if (!check.checkArray(puzzle)) {
+    canvas.classList.add("cursor-move");
+    canvas.addEventListener("click", moveCell);
+  }
 }
 function moveCell(event) {
   const canvas = document.querySelector("canvas");
@@ -180,10 +276,11 @@ function moveCell(event) {
     ++count;
   }
   showCount();
-  drawField();
+  //drawField();
 
   timer = !check.checkArray(puzzle);
   if (!timer) {
+    let records = [];
     canvas.removeEventListener("click", moveCell);
     canvas.classList.remove("cursor-move");
     let rec = localStorage.getItem("records");
@@ -206,14 +303,22 @@ function moveCell(event) {
       movie: count,
     };
     records.push(record);
-    records.push(record);
-    records.push(record);
-    records.push(record);
-    records.push(record);
     localStorage.setItem("records", JSON.stringify(records.slice(-10)));
-    alert(`Hooray! You solved the puzzle in ${time} and ${count} moves!`);
+    //showWin(time, count);
+    setTimeout(function () {
+      alert(`Hooray! You solved the puzzle in ${time} and ${count} moves!`);
+    }, 500);
   }
+  // } else {
+  //   canvas.classList.add("cursor-move");
+  //   canvas.addEventListener("click", moveCell);
+  // }
 }
+function showWin(time, count) {
+  const fragment = document.createDocumentFragment();
+  const div = document.createElement(div);
+}
+
 function drawMove(message, j, i) {
   const canvas = document.querySelector("canvas");
   const context = canvas.getContext("2d");
@@ -364,10 +469,7 @@ function createHeader() {
       button.textContent = buttons[key];
       if (key === "soundMute") {
         let tempSound = localStorage.getItem("sound");
-        console.log(tempSound, sound, JSON.parse(tempSound));
-        console.log(tempSound === null);
         sound = tempSound === null ? true : JSON.parse(tempSound);
-        console.log(typeof sound, sound);
         if (sound) {
           button.textContent = "Sound off";
         } else {
