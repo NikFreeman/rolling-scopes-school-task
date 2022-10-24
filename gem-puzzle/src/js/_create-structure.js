@@ -509,7 +509,7 @@ function createMain() {
   const main = document.createElement("main");
   main.classList.add("mx-auto", "max-w-fit");
   const div = document.createElement("div");
-  div.classList.add("my-3", "flex", "justify-center");
+  div.classList.add("my-3", "flex", "justify-center", "gap-10");
   const paragraph1 = document.createElement("p");
   paragraph1.classList.add("w-32", "sm:w-40", "font-bold", "text-slate-300");
   paragraph1.setAttribute("id", "movie");
